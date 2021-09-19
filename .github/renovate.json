@@ -37,6 +37,22 @@
                 "dep/{{updateType}}"
             ],
             "enabled": true
+        },
+        {
+          "datasources": [
+            "repology"
+          ],
+          "packagePatterns": [
+            "^alpine_3_14/"
+          ],
+          "separateMajorMinor": false,
+          "groupName": "alpine packages",
+          "groupSlug": "alpine",
+          "labels": [
+            "renovate/{{datasource}}",
+            "dep/{{updateType}}"
+        ],
+        "enabled": true
         }
     ],
     "pre-commit": {
