@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.2.0](https://github.com/containeroo/alpine-toolbox/tree/v1.2.0) (2021-09-19)
+
+[All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.1.0...v1.2.0)
+
+*new feature*
+
+- renovate will update all packages
+
 ## [v1.1.0](https://github.com/containeroo/alpine-toolbox/tree/v1.1.0) (2021-09-19)
 
 [All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.0.0...v1.1.0)
