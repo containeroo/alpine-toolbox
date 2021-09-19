@@ -1,24 +1,30 @@
-FROM curlimages/curl:7.78.0 as builder
-
 FROM alpine:3.14.2
 
-# renovate: datasource=github-releases depName=stedolan/jq versioning=loose extractVersion=^jq-(?<version>.*)$
-ARG JQ_VERSION=1.6
+# renovate: datasource=repology depName=alpine_3_14/bash versioning=loose
+ARG BASH_VERSION=5.1.4-r0
+
+# renovate: datasource=repology depName=alpine_3_14/curl versioning=loose
+ARG CURL_VERSION=7.79.0-r0
 
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.13.0
 
-RUN apk add --no-cache bash tzdata coreutils brotli brotli-dev libssh2 nghttp2-dev && \
-    rm -fr /var/cache/apk/*
+# renovate: datasource=repology depName=alpine_3_14/jq versioning=loose
+ARG JQ_VERSION=1.6-r1
 
-COPY --from=builder ["/usr/lib/libcurl.so*", "/usr/lib/"]
-COPY --from=builder "/usr/bin/curl" "/usr/bin/curl"
+# renovate: datasource=repology depName=alpine_3_14/tzdata versioning=loose
+ARG TZDATA_VERSION=2021a-r0
 
-COPY --from=builder "/cacert.pem" "/cacert.pem"
-ENV CURL_CA_BUNDLE="/cacert.pem"
+# renovate: datasource=repology depName=alpine_3_14/coreutils versioning=loose
+ARG COREUTILS_VERSION=8.32-r2
 
-RUN wget -O /usr/local/bin/jq https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 && \
-    chmod +x /usr/local/bin/jq
+RUN apk add --no-cache \
+  bash==${BASH_VERSION} \
+  curl==${CURL_VERSION} \
+  jq==${JQ_VERSION} \
+  tzdata==${TZDATA_VERSION} \
+  coreutils==${COREUTILS_VERSION} \
+  rm -rf /var/cache/apk/*
 
 RUN wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64 && \
     chmod +x /usr/local/bin/yq
