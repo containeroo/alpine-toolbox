@@ -6,3 +6,5 @@ alpine linux with following components:
 - curl
 - jq
 - yq
+- tzdata
+- coreutils

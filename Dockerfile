@@ -8,7 +8,7 @@ ARG JQ_VERSION=1.6
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.13.0
 
-RUN apk add --no-cache bash brotli brotli-dev libssh2 nghttp2-dev && \
+RUN apk add --no-cache bash tzdata coreutils brotli brotli-dev libssh2 nghttp2-dev && \
     rm -fr /var/cache/apk/*
 
 COPY --from=builder ["/usr/lib/libcurl.so*", "/usr/lib/"]
