@@ -1,6 +1,6 @@
 # Changelog
 
-## [v1.2.1](https://github.com/containeroo/alpine-toolbox/tree/v1.2.1) (2021-09-19)
+## [v1.2.1](https://github.com/containeroo/alpine-toolbox/tree/v1.2.1) (2021-09-20)
 
 [All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.2.0...v1.2.1)
 
