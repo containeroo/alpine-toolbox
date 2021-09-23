@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.2.2](https://github.com/containeroo/alpine-toolbox/tree/v1.2.2) (2021-09-23)
+
+[All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.2.1...v1.2.2)
+
+*updates*
+
+- curl to 7.79.1-r0
+
 ## [v1.2.1](https://github.com/containeroo/alpine-toolbox/tree/v1.2.1) (2021-09-20)
 
 [All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.2.0...v1.2.1)
