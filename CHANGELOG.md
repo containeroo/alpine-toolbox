@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.2.3](https://github.com/containeroo/alpine-toolbox/tree/v1.2.3) (2021-09-26)
+
+[All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.2.2...v1.2.3)
+
+*updates*
+
+- tzdata to 2021b-r0
+
 ## [v1.2.2](https://github.com/containeroo/alpine-toolbox/tree/v1.2.2) (2021-09-23)
 
 [All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.2.1...v1.2.2)
