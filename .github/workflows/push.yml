@@ -12,13 +12,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Update README.md
         run: |
-          sed \
-            --regexp-extended \
-            --quiet \
-            's/(ARG|ENV)\s*(.*)_VERSION(=|\s*)(.*)/\L\2 (\4)/p' Dockerfile | \
+          sed --regexp-extended --quiet 's/(ARG|ENV)\s*(.*)_VERSION(=|\s*)(.*)/\L\2 (\4)/p' Dockerfile | \
             xargs \
               --max-args=2 \
-              bash -c
+              bash -c \
                 'sed \
                   --in-place \
                   --regexp-extended \
