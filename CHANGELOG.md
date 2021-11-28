@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.6.0](https://github.com/containeroo/alpine-toolbox/tree/v1.5.0) (2021-11-28)
+
+[All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.5.0...v1.6.0)
+
+*updates*
+
+- alpine to 3.15.0
+
 ## [v1.5.0](https://github.com/containeroo/alpine-toolbox/tree/v1.5.0) (2021-11-24)
 
 [All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.4.0...v1.5.0)
