@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Update components in README.md
+      - name: Update component versions in README.md
         run: |
           sed \
             --regexp-extended \
