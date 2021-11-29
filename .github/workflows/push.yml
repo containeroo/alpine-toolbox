@@ -24,6 +24,17 @@ jobs:
                 --in-place \
                 --regexp-extended \
                 "s/${0}.*$/${0} ${1}/" README.md'
+          sed \
+            --regexp-extended \
+            --quiet \
+            's/FROM\s+alpine:(.*)/(\1)/p' Dockerfile | \
+          xargs \
+            bash \
+            -c \
+              'sed \
+                --in-place \
+                --regexp-extended \
+                "s/linux (.*) with/linux ${1} with/" README.md'
       - name: Commit & push updated README.md
         run: |
           git config --local user.name  ${{ github.actor }}
