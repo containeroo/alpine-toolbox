@@ -1,6 +1,14 @@
 # Changelog
 
-## [v1.6.0](https://github.com/containeroo/alpine-toolbox/tree/v1.5.0) (2021-11-28)
+## [v1.6.1](https://github.com/containeroo/alpine-toolbox/tree/v1.6.1) (2021-11-29)
+
+[All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.6.0...v1.6.1)
+
+*updates*
+
+- github push action
+
+## [v1.6.0](https://github.com/containeroo/alpine-toolbox/tree/v1.6.0) (2021-11-28)
 
 [All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.5.0...v1.6.0)
 
