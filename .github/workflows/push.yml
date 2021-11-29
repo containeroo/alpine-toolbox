@@ -39,7 +39,7 @@ jobs:
                 "s/linux (.*) with/linux ${0} with/" README.md'
       - name: Commit & push updated README.md
         run: |
-          if [[ $(git status --porcelain) ]]; then return 0; fi# skip if nothing has changed
+          if [[ $(git status --porcelain) ]]; then return 0; fi  # skip if nothing has changed
           git config --local user.name  ${{ github.actor }}
           git add README.md
           git commit -m "README: update version"
