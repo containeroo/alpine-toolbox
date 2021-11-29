@@ -39,11 +39,12 @@ jobs:
                 "s/linux (.*) with/linux ${0} with/" README.md'
       - name: Commit & push updated README.md
         run: |
-          if [[ $(git status README.md --porcelain) ]];then return 0; fi  # skip if nothing has changed
-          git config --local user.name  ${{ github.actor }}
-          git add README.md
-          git commit -m "README: update version"
-          git push https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:master
+          if [[ ! $(git status README.md --porcelain) ]];then
+            git config --local user.name  ${{ github.actor }}
+            git add README.md
+            git commit -m "README: update version"
+            git push https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:master
+          fi
       - name: Log in to GitHub Container registry
         uses: docker/login-action@v1
         with:
