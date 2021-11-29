@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Update README.md
+      - name: Update components in README.md
         run: |
           sed \
             --regexp-extended \
@@ -24,6 +24,8 @@ jobs:
                 --in-place \
                 --regexp-extended \
                 "s/${0}.*$/${0} ${1}/" README.md'
+      - name: Update alpine version in README.md
+        run: |
           sed \
             --regexp-extended \
             --quiet \
