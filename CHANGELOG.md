@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.6.4](https://github.com/containeroo/alpine-toolbox/tree/v1.6.4) (2021-12-01)
+
+[All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.6.3...v1.6.4)
+
+*fix*
+
+- depName in Dockerfile
+
+*feature*
+
+- github-workflow: update depName in Dockerfile
+
 ## [v1.6.3](https://github.com/containeroo/alpine-toolbox/tree/v1.6.3) (2021-11-29)
 
 [All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.6.2...v1.6.3)
