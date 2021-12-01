@@ -10,6 +10,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Update datasource in Dockerfile
+        run: |
+          sed \
+            --regexp-extended \
+            --quiet \
+            's/.*alpine:([0-9]).([0-9]+).*/\1 \2/p' Dockerfile | \
+          xargs \
+            --max-args=2 \
+            bash \
+            -c \
+              'sed \
+                --in-place \
+                --regexp-extended \
+                "s/alpine_[0-9]_[0-9]+/alpine_${0}_${1}/" Dockerfile'
       - name: Update component versions in README.md
         run: |
           sed \
