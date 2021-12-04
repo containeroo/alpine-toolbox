@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.7.0](https://github.com/containeroo/alpine-toolbox/tree/v1.7.0) (2021-12-04)
+
+[All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.6.4...v1.7.0)
+
+*updates*
+
+- yq to 4.16.1
+
 ## [v1.6.4](https://github.com/containeroo/alpine-toolbox/tree/v1.6.4) (2021-12-01)
 
 [All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.6.3...v1.6.4)
