@@ -2,8 +2,8 @@
 
 alpine linux (3.15.0) with following components:
 
-- bash (5.1.8-r0)
-- curl (7.80.0-r0)
+- bash (5.1)
+- curl (7.1)
 - jq (1.6-r1)
 - yq (4.19.1)
 - tzdata (2021e-r0)
