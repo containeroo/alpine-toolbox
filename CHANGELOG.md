@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.11.0](https://github.com/containeroo/alpine-toolbox/tree/v1.11.0) (2022-02-15)
+
+[All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.10.0...v1.11.0)
+
+*updates*
+
+- yq to 4.20.1
+
 ## [v1.10.0](https://github.com/containeroo/alpine-toolbox/tree/v1.10.0) (2022-02-06)
 
 [All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.9.0...v1.10.0)
