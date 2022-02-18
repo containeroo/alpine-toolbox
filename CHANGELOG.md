@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.11.1](https://github.com/containeroo/alpine-toolbox/tree/v1.11.1) (2022-02-18)
+
+[All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.11.0...v1.11.1)
+
+*updates*
+
+- bash to 5.1.16-r0
+
 ## [v1.11.0](https://github.com/containeroo/alpine-toolbox/tree/v1.11.0) (2022-02-15)
 
 [All Commits](https://github.com/containeroo/alpine-toolbox/compare/v1.10.0...v1.11.0)
