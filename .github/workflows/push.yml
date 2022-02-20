@@ -67,7 +67,15 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Prepare release tag
         id: tag
-        run: echo ::set-output name=version::${GITHUB_REF#refs/tags/v}
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          generateReleaseNotes: true
+          draft: false
+          prerelease: false
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
