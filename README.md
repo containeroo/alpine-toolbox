@@ -8,3 +8,4 @@ alpine linux (3.15.0) with following components:
 - yq (4.21.1)
 - tzdata (2021e-r0)
 - coreutils (9.0-r2)
+- vim ()
