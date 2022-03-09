@@ -52,7 +52,7 @@ jobs:
                 --in-place \
                 --regexp-extended \
                 "s/linux (.*) with/linux ${0} with/" README.md'
-      - uses: EndBug/add-and-commit@v7
+      - uses: EndBug/add-and-commit@v8
         with:
           message: "README: update version"
           default_author: github_actions
