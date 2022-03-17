@@ -56,22 +56,17 @@ jobs:
         with:
           message: "README: update version"
           default_author: github_actions
-      - name: Build changelog from PRs with labels
-        id: build_changelog
-        uses: mikepenz/release-changelog-builder-action@v2
-        with:
-          configuration: ".github/changelog-configuration.json"
-          # PreReleases still get a changelog, but the next full release gets a diff since the last full release,
-          # combining possible changelogs of all previous PreReleases in between.
-          # PreReleases show a partial changelog since last PreRelease.
-          ignorePreReleases: "${{ !contains(github.ref, '-rc') }}"
+      - name: Build Changelog from PRs with labels
+        id: github_release
+        uses: mikepenz/release-changelog-builder-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create Release
-        uses: ncipollo/release-action@v1
+        uses: actions/create-release@v1
         with:
-          body: ${{steps.build_changelog.outputs.changelog}}
-          prerelease: "${{ contains(github.ref, '-rc') }}"
-          # Ensure target branch for release is "master"
-          commit: master
-          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body: ${{steps.github_release.outputs.changelog}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
