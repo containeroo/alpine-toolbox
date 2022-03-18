@@ -58,7 +58,7 @@ jobs:
           default_author: github_actions
       - name: Build Changelog from PRs with labels
         id: github_release
-        uses: mikepenz/release-changelog-builder-action@v1
+        uses: mikepenz/release-changelog-builder-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
