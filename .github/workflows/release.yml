@@ -1,14 +1,13 @@
 name: Release
 on:
-  push:
-    tags:
-      - v*
-
+  pull_request:
+    types: [closed]
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: "0"
           repository: ${{ github.event.pull_request.head.repo.full_name }}
