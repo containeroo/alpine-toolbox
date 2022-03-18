@@ -52,16 +52,17 @@ jobs:
                 --in-place \
                 --regexp-extended \
                 "s/linux (.*) with/linux ${0} with/" README.md'
-      - uses: EndBug/add-and-commit@v9
+      - name: Update README inside git repo
+        uses: EndBug/add-and-commit@v9
         with:
           message: "README: update version"
+          add: README.md
           default_author: github_actions
       - name: Build Changelog from PRs with labels
         id: github_release
         uses: mikepenz/release-changelog-builder-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Create Release
         uses: actions/create-release@v1
         with:
