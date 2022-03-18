@@ -1,63 +1,15 @@
-name: Release
+name: Create Release
 on:
-  pull_request:
-    types: [closed]
+  push:
+    tags:
+      - v*
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: "0"
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
-      - name: Update datasource in Dockerfile
-        run: |
-          sed \
-            --regexp-extended \
-            --quiet \
-            's/.*alpine:([0-9]).([0-9]+).*/\1 \2/p' Dockerfile | \
-          xargs \
-            --max-args=2 \
-            bash \
-            -c \
-              'sed \
-                --in-place \
-                --regexp-extended \
-                "s/alpine_[0-9]_[0-9]+/alpine_${0}_${1}/" Dockerfile'
-      - name: Update component versions in README.md
-        run: |
-          sed \
-            --regexp-extended \
-            --quiet \
-            's/(ARG|ENV)\s*(.*)_VERSION(=|\s*)(.*)/\L\2 (\4)/p' Dockerfile | \
-          xargs \
-            --max-args=2 \
-            bash \
-            -c \
-              'sed \
-                --in-place \
-                --regexp-extended \
-                "s/${0}.*$/${0} ${1}/" README.md'
-      - name: Update alpine version in README.md
-        run: |
-          sed \
-            --regexp-extended \
-            --quiet \
-            's/FROM\s+alpine:(.*)/(\1)/p' Dockerfile | \
-          xargs \
-            bash \
-            -c \
-              'sed \
-                --in-place \
-                --regexp-extended \
-                "s/linux (.*) with/linux ${0} with/" README.md'
-      - name: Push updated README.md
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: "README: update version"
-          default_author: github_actions
       - name: Build Changelog from PRs with labels
         id: github_release
         uses: mikepenz/release-changelog-builder-action@v2
