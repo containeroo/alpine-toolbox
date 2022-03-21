@@ -10,11 +10,11 @@ spec:
   automountServiceAccountToken: false
   containers:
     - name: alpine-toolbox
+      image: ghcr.io/containeroo/alpine-toolbox:1.15.1
+      imagePullPolicy: IfNotPresent
       command:
         - bash
       args:
         - -c
         - "sleep infinity"
-      image: ghcr.io/containeroo/alpine-toolbox:1.15.1
-      imagePullPolicy: IfNotPresent
       resources: {}
