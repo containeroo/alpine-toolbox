@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alpine-toolbox
+  namespace: default
+  labels:
+    app: alpine-toolbox
+spec:
+  automountServiceAccountToken: false
+  containers:
+    - name: alpine-toolbox
+      command:
+        - bash
+      args:
+        - -c
+        - "sleep infinity"
+      image: ghcr.io/containeroo/alpine-toolbox:1.15.1
+      imagePullPolicy: IfNotPresent
+      resources: {}
