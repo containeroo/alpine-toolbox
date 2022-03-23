@@ -31,4 +31,4 @@ RUN apk add --no-cache \
   && rm -rf /var/cache/apk/*
 
 RUN wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64 && \
-    chmod +x /usr/local/bin/yq
+  chmod +x /usr/local/bin/yq
