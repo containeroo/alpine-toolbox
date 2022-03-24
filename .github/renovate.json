@@ -5,10 +5,7 @@
   "separateMajorMinor": false,
   "regexManagers": [
     {
-      "fileMatch": [
-        "(^|/)Dockerfile$",
-        "(^|/)Dockerfile\\.[^/]*$"
-      ],
+      "fileMatch": ["(^|/)Dockerfile$", "(^|/)Dockerfile\\.[^/]*$"],
       "matchStrings": [
         "#\\srenovate:\\sdatasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s(ENV|ARG) .*?_VERSION(\\s+|=)(?<currentValue>.*)\\s"
       ],
@@ -17,36 +14,18 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": [
-        "docker",
-        "github-releases",
-        "github-tags"
-      ],
-      "matchUpdateTypes": [
-        "patch",
-        "minor",
-        "major"
-      ],
-      "labels": [
-        "renovate/{{datasource}}",
-        "dep/{{updateType}}"
-      ],
+      "matchDatasources": ["docker", "github-releases", "github-tags"],
+      "matchUpdateTypes": ["patch", "minor", "major"],
+      "labels": ["renovate/{{datasource}}", "dep/{{updateType}}"],
       "enabled": true
     },
     {
-      "datasources": [
-        "repology"
-      ],
-      "packagePatterns": [
-        "^alpine_3_14/"
-      ],
+      "datasources": ["repology"],
+      "packagePatterns": ["^alpine_3_14/"],
       "separateMajorMinor": false,
       "groupName": "alpine packages",
       "groupSlug": "alpine",
-      "labels": [
-        "renovate/{{datasource}}",
-        "dep/{{updateType}}"
-      ],
+      "labels": ["renovate/{{datasource}}", "dep/{{updateType}}"],
       "enabled": true
     }
   ],

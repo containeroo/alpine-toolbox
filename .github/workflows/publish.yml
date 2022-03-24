@@ -27,6 +27,12 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
+          labels: |
+            org.opencontainers.image.title=alpine-toolbox
+            org.opencontainers.image.description=alpine-toolbox
+            org.opencontainers.image.url=https://github.com/containeroo/alpine-toolbox
+            org.opencontainers.image.source=https://github.com/containeroo/alpine-toolbox
+            org.opencontainers.image.version=${{ steps.tag.outputs.version }}
           tags: |
             ghcr.io/containeroo/alpine-toolbox:latest
             ghcr.io/containeroo/alpine-toolbox:${{ steps.tag.outputs.version }}
