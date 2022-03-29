@@ -3,6 +3,10 @@
   "semanticCommits": "enabled",
   "dependencyDashboard": true,
   "separateMajorMinor": false,
+  "labels": [
+    "renovate/{{datasource}}",
+    "{{updateType}}"
+  ],
   "regexManagers": [
     {
       "fileMatch": ["(^|/)Dockerfile$", "(^|/)Dockerfile\\.[^/]*$"],
