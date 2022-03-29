@@ -7,15 +7,15 @@
       },
       {
           "title": "## 🛠️ Minor Changes",
-          "labels": ["change"]
+          "labels": ["change", "minor"]
       },
       {
           "title": "## 🔎 Breaking Changes",
-          "labels": ["breaking"]
+          "labels": ["breaking", "major"]
       },
       {
           "title": "## 🐛 Fixes",
-          "labels": ["bug", "fix"]
+          "labels": ["bug", "fix", "patch"]
       },
       {
           "title": "## 📄 Documentation",
