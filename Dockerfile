@@ -19,7 +19,7 @@ ARG TZDATA_VERSION=2022a-r0
 ARG COREUTILS_VERSION=9.0-r2
 
 # renovate: datasource=repology depName=alpine_3_15/vim
-ARG VIM_VERSION=8.2.4173
+ARG VIM_VERSION=8.2.4619-r0
 
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
@@ -27,7 +27,7 @@ RUN apk add --no-cache \
   jq==${JQ_VERSION} \
   tzdata==${TZDATA_VERSION} \
   coreutils==${COREUTILS_VERSION} \
-  vim==${VIM_VERSION}-r0 \
+  vim==${VIM_VERSION} \
   && rm -rf /var/cache/apk/*
 
 RUN wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64 && \
