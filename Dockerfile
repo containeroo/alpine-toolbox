@@ -19,7 +19,7 @@ ARG TZDATA_VERSION=2022a-r0
 ARG COREUTILS_VERSION=9.0-r2
 
 # renovate: datasource=repology depName=alpine_3_15/vim
-ARG VIM_VERSION=8.2.4708-r0
+ARG VIM_VERSION=8.2.4836-r0
 
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
