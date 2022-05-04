@@ -4,6 +4,8 @@
   "dependencyDashboard": true,
   "separateMajorMinor": false,
   "labels": ["dependency"],
+  "stabilityDays": 1,
+  "prCreation": "not-pending",
   "regexManagers": [
     {
       "fileMatch": ["(^|/)Dockerfile$", "(^|/)Dockerfile\\.[^/]*$"],
