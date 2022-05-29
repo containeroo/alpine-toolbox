@@ -16,7 +16,7 @@ ARG JQ_VERSION=1.6-r1
 ARG TZDATA_VERSION=2022a-r0
 
 # renovate: datasource=repology depName=alpine_3_16/coreutils versioning=loose
-ARG COREUTILS_VERSION=9.1-r2
+ARG COREUTILS_VERSION=9.1-r0
 
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
