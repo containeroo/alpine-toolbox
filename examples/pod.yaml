@@ -10,7 +10,7 @@ spec:
   automountServiceAccountToken: false
   containers:
     - name: alpine-toolbox
-      image: ghcr.io/containeroo/alpine-toolbox:1.15.1
+      image: ghcr.io/containeroo/alpine-toolbox:latest
       imagePullPolicy: IfNotPresent
       command:
         - bash
