@@ -7,4 +7,4 @@ alpine linux (3.16.0) with following components:
 - jq (1.6-r1)
 - yq (4.25.2)
 - tzdata (2022a-r0)
-- coreutils (9.1-r2)
+- coreutils (9.1-r0)
