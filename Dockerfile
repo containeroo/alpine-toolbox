@@ -1,10 +1,10 @@
 FROM alpine:3.16.0
 
 # renovate: datasource=repology depName=alpine_3_16/bash versioning=loose
-ARG BASH_VERSION=5.1.16-r0
+ARG BASH_VERSION=5.1.16-r2
 
 # renovate: datasource=repology depName=alpine_3_16/curl versioning=loose
-ARG CURL_VERSION=7.80.0-r1
+ARG CURL_VERSION=7.83.1-r1
 
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.25.2
@@ -16,7 +16,7 @@ ARG JQ_VERSION=1.6-r1
 ARG TZDATA_VERSION=2022a-r0
 
 # renovate: datasource=repology depName=alpine_3_16/coreutils versioning=loose
-ARG COREUTILS_VERSION=9.0-r2
+ARG COREUTILS_VERSION=9.1-r2
 
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
