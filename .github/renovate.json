@@ -23,7 +23,7 @@
     },
     {
       "datasources": ["repology"],
-      "packagePatterns": ["^alpine_3_15/"],
+      "packagePatterns": ["^alpine_3_16/"],
       "separateMajorMinor": false,
       "groupName": "alpine packages",
       "groupSlug": "alpine",
