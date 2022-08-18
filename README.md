@@ -6,5 +6,5 @@ alpine linux (3.16.2) with following components:
 - curl (7.83.1-r2)
 - jq (1.6-r1)
 - yq (4.27.2)
-- tzdata (2022a-r0)
+- tzdata (2022c-r0)
 - coreutils (9.1-r0)
