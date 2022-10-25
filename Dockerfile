@@ -7,7 +7,7 @@ ARG BASH_VERSION=5.1.16-r2
 ARG CURL_VERSION=7.83.1-r3
 
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
-ARG YQ_VERSION=4.27.5
+ARG YQ_VERSION=4.28.2
 
 # renovate: datasource=repology depName=alpine_3_16/jq versioning=loose
 ARG JQ_VERSION=1.6-r1
