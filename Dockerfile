@@ -1,4 +1,4 @@
-FROM alpine:3.17.0
+FROM alpine:3.16.3
 
 # renovate: datasource=repology depName=alpine_3_17/bash versioning=loose
 ARG BASH_VERSION=5.1.16-r2
