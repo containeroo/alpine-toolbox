@@ -1,7 +1,7 @@
 FROM alpine:3.17.0
 
 # renovate: datasource=repology depName=alpine_3_17/bash versioning=loose
-ARG BASH_VERSION=5.2.12-r0
+ARG BASH_VERSION=5.2.15-r0
 
 # renovate: datasource=repology depName=alpine_3_17/curl versioning=loose
 ARG CURL_VERSION=7.86.0-r1
