@@ -19,7 +19,7 @@ ARG TZDATA_VERSION=2022f-r1
 ARG COREUTILS_VERSION=9.1-r0
 
 # renovate: datasource=repology depName=alpine_3_17/gettext
-ARG GETTEXT_VERSION=0.21.1
+ARG GETTEXT_VERSION=0.21-r0
 
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
