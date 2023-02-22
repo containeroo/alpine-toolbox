@@ -6,6 +6,6 @@ alpine linux (3.17.2) with following components:
 - curl (7.87.0-r2)
 - gettext (0.21.1-r1)
 - jq (1.6-r2)
-- yq (4.30.8)
+- yq (4.31.1)
 - tzdata (2022f-r1)
 - coreutils (9.1-r0)
