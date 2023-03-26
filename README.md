@@ -7,5 +7,5 @@ alpine linux (3.17.2) with following components:
 - gettext (0.21.1-r1)
 - jq (1.6-r2)
 - yq (4.31.2)
-- tzdata (2022f-r1)
+- tzdata (2023b-r1)
 - coreutils (9.1-r0)
