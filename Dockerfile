@@ -10,7 +10,7 @@ ARG CURL_VERSION=8.0.1-r0
 ARG YQ_VERSION=4.31.2
 
 # renovate: datasource=repology depName=alpine_3_18/jq versioning=loose
-ARG JQ_VERSION=1.6-r2
+ARG JQ_VERSION=1.6-r3
 
 # renovate: datasource=repology depName=alpine_3_18/tzdata versioning=loose
 ARG TZDATA_VERSION=2023c-r0
