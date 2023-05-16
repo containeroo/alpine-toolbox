@@ -1,24 +1,24 @@
 FROM alpine:3.18.0
 
-# renovate: datasource=repology depName=alpine_3_17/bash versioning=loose
+# renovate: datasource=repology depName=alpine_3_18/bash versioning=loose
 ARG BASH_VERSION=5.2.15-r0
 
-# renovate: datasource=repology depName=alpine_3_17/curl versioning=loose
+# renovate: datasource=repology depName=alpine_3_18/curl versioning=loose
 ARG CURL_VERSION=8.0.1-r0
 
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.31.2
 
-# renovate: datasource=repology depName=alpine_3_17/jq versioning=loose
+# renovate: datasource=repology depName=alpine_3_18/jq versioning=loose
 ARG JQ_VERSION=1.6-r2
 
-# renovate: datasource=repology depName=alpine_3_17/tzdata versioning=loose
+# renovate: datasource=repology depName=alpine_3_18/tzdata versioning=loose
 ARG TZDATA_VERSION=2023c-r0
 
-# renovate: datasource=repology depName=alpine_3_17/coreutils versioning=loose
+# renovate: datasource=repology depName=alpine_3_18/coreutils versioning=loose
 ARG COREUTILS_VERSION=9.1-r0
 
-# renovate: datasource=repology depName=alpine_3_17/gettext
+# renovate: datasource=repology depName=alpine_3_18/gettext
 ARG GETTEXT_VERSION=0.21.1-r1
 
 RUN apk add --no-cache \
