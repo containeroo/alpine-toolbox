@@ -3,7 +3,7 @@
 alpine linux (3.18.0) with following components:
 
 - bash (5.2.15-r5)
-- curl (8.1.1-r1)
+- curl (8.1.2-r0)
 - gettext (0.21.1-r7)
 - jq (1.6-r3)
 - yq (4.31.2)
