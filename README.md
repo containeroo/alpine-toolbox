@@ -1,6 +1,6 @@
 # alpine-toolbox
 
-alpine linux (3.18.0) with following components:
+alpine linux (3.18.2) with following components:
 
 - bash (5.2.15-r5)
 - curl (8.1.2-r0)
