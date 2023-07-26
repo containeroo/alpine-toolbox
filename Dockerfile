@@ -21,6 +21,9 @@ ARG COREUTILS_VERSION=9.3-r1
 # renovate: datasource=repology depName=alpine_3_18/gettext
 ARG GETTEXT_VERSION=0.21.1-r7
 
+# renovate: datasource=repology depName=alpine_3_18/openssl
+ARG OPENSSL_VERSION=3.1.1-r3
+
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
   curl==${CURL_VERSION} \
@@ -28,6 +31,7 @@ RUN apk add --no-cache \
   tzdata==${TZDATA_VERSION} \
   coreutils==${COREUTILS_VERSION} \
   gettext==${GETTEXT_VERSION} \
+  openssl==${OPENSSL_VERSION} \
   && rm -rf /var/cache/apk/*
 
 RUN wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64 && \
