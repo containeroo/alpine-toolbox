@@ -22,7 +22,7 @@ ARG COREUTILS_VERSION=9.3-r1
 ARG GETTEXT_VERSION=0.21.1-r7
 
 # renovate: datasource=repology depName=alpine_3_18/openssl
-ARG OPENSSL_VERSION=3.1.4-r0
+ARG OPENSSL_VERSION=3.1.4-r1
 
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
