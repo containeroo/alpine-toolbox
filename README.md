@@ -9,4 +9,4 @@ alpine linux (3.18.4) with following components:
 - yq (4.31.2)
 - tzdata (2023c-r1)
 - coreutils (9.3-r1)
-- openssl (3.1.3-r0)
+- openssl (3.1.4-r1)
