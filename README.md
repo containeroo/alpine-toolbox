@@ -7,6 +7,6 @@ alpine linux (3.19.0) with following components:
 - gettext (0.22.3-r0)
 - jq (1.7.1-r0)
 - yq (4.31.2)
-- tzdata (2023c-r1)
+- tzdata (2023d-r0)
 - coreutils (9.4-r1)
 - openssl (3.1.4-r2)
