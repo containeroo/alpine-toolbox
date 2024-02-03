@@ -1,6 +1,6 @@
 # alpine-toolbox
 
-alpine linux (3.19.0) with following components:
+alpine linux (3.19.1) with following components:
 
 - bash (5.2.21-r0)
 - coreutils (9.4-r2)
