@@ -13,7 +13,7 @@ ARG YQ_VERSION=4.31.2
 ARG JQ_VERSION=1.7.1-r0
 
 # renovate: datasource=repology depName=alpine_3_19/tzdata versioning=loose
-ARG TZDATA_VERSION=2023d-r0
+ARG TZDATA_VERSION=2024a-r0
 
 # renovate: datasource=repology depName=alpine_3_19/coreutils versioning=loose
 ARG COREUTILS_VERSION=9.4-r2
