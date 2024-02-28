@@ -9,4 +9,4 @@ alpine linux (3.19.1) with following components:
 - jq (1.7.1-r0)
 - openssl (3.1.4-r5)
 - tzdata (2024a-r0)
-- yq (4.41.1)
+- yq (4.42.1)
