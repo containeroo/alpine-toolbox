@@ -24,6 +24,9 @@ ARG GETTEXT_VERSION=0.22.3-r0
 # renovate: datasource=repology depName=alpine_3_19/openssl
 ARG OPENSSL_VERSION=3.1.4-r5
 
+# renovate: datasource=repology depName=alpine_3_19/xmlstarlet
+ARG XMLSTARLET_VERSION=1.6.1-r2
+
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
   curl==${CURL_VERSION} \
@@ -32,6 +35,7 @@ RUN apk add --no-cache \
   coreutils==${COREUTILS_VERSION} \
   gettext==${GETTEXT_VERSION} \
   openssl==${OPENSSL_VERSION} \
+  xmlstarlet==${XMLSTARLET_VERSION} \
   && rm -rf /var/cache/apk/*
 
 RUN wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64 && \
