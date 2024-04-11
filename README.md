@@ -7,7 +7,7 @@ alpine linux (3.19.1) with following components:
 - curl (8.5.0-r0)
 - gettext (0.22.3-r0)
 - jq (1.7.1-r0)
-- openssl (3.1.4-r5)
+- openssl (3.1.4-r6)
 - tzdata (2024a-r0)
 - xmlstarlet (1.6.1-r2)
 - yq (4.42.1)
