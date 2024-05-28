@@ -1,10 +1,10 @@
 FROM alpine:3.20.0
 
 # renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
-ARG BASH_VERSION=5.2.21-r0
+ARG BASH_VERSION=5.2.26-r0
 
 # renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
-ARG CURL_VERSION=8.5.0-r0
+ARG CURL_VERSION=8.7.1-r0
 
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.42.1
@@ -13,28 +13,28 @@ ARG YQ_VERSION=4.42.1
 ARG JQ_VERSION=1.7.1-r0
 
 # renovate: datasource=repology depName=alpine_3_20/tzdata versioning=loose
-ARG TZDATA_VERSION=2024a-r0
+ARG TZDATA_VERSION=2024a-r1
 
 # renovate: datasource=repology depName=alpine_3_20/coreutils versioning=loose
-ARG COREUTILS_VERSION=9.4-r2
+ARG COREUTILS_VERSION=9.5-r1
 
 # renovate: datasource=repology depName=alpine_3_20/gettext
-ARG GETTEXT_VERSION=0.22.3-r0
+ARG GETTEXT_VERSION=0.22.5-r0
 
 # renovate: datasource=repology depName=alpine_3_20/openssl
-ARG OPENSSL_VERSION=3.1.4-r6
+ARG OPENSSL_VERSION=3.3.0-r2
 
 # renovate: datasource=repology depName=alpine_3_20/xmlstarlet
 ARG XMLSTARLET_VERSION=1.6.1-r2
 
 # renovate: datasource=repology depName=alpine_3_20/rsync
-ARG RSYNC_VERSION=3.2.7-r4
+ARG RSYNC_VERSION=3.3.0-r0
 
 # renovate: datasource=repology depName=alpine_3_20/bind-tools
-ARG BIND_TOOLS_VERSION=9.18.24-r1
+ARG BIND_TOOLS_VERSION=9.18.27-r0
 
 # renovate: datasource=repology depName=alpine_3_20/inetutils-telnet
-ARG INETUTILS_VERSION=2.4-r0
+ARG INETUTILS_VERSION=2.5-r0
 
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
