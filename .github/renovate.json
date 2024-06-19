@@ -4,7 +4,7 @@
   "dependencyDashboard": true,
   "separateMajorMinor": false,
   "labels": ["dependency"],
-  "minimumReleaseAge": 1,
+  "minimumReleaseAge": "1 day",
   "prCreation": "not-pending",
   "regexManagers": [
     {
