@@ -11,6 +11,6 @@ alpine linux (3.20.0) with following components:
 - jq (1.7.1-r0)
 - openssl (3.3.1-r3)
 - rsync (3.3.0-r0)
-- tzdata (2024a-r1)
+- tzdata (2024b-r0)
 - xmlstarlet (1.6.1-r2)
 - yq (4.42.1)
