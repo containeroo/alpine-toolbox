@@ -22,7 +22,7 @@ ARG COREUTILS_VERSION=9.5-r1
 ARG GETTEXT_VERSION=0.22.5-r0
 
 # renovate: datasource=repology depName=alpine_3_20/openssl
-ARG OPENSSL_VERSION=3.3.2-r0
+ARG OPENSSL_VERSION=3.3.2-r1
 
 # renovate: datasource=repology depName=alpine_3_20/xmlstarlet
 ARG XMLSTARLET_VERSION=1.6.1-r2
