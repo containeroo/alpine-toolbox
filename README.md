@@ -4,6 +4,7 @@ alpine linux (3.20.0) with following components:
 
 - bash (5.2.26-r0)
 - bind-tools (9.18.24-r1)
+- catatonit (v0.2.0)
 - coreutils (9.5-r1)
 - curl (8.10.1-r0)
 - gettext (0.22.5-r0)
