@@ -57,6 +57,10 @@ RUN apk add --no-cache \
 RUN wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64 && \
   chmod +x /usr/local/bin/yq
 
+# download and install catatonit from GitHub
+ADD https://github.com/openSUSE/catatonit/releases/download/v${CATATONIT_VERSION}/catatonit.x86_64 /usr/bin/catatonit
+RUN chmod +x /usr/bin/catatonit
+
 COPY forever.sh /usr/bin/forever
 RUN chmod +x /usr/bin/forever
 
