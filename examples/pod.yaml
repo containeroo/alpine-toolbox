@@ -12,9 +12,4 @@ spec:
     - name: alpine-toolbox
       image: ghcr.io/containeroo/alpine-toolbox:latest
       imagePullPolicy: IfNotPresent
-      command:
-        - bash
-      args:
-        - -c
-        - "sleep infinity"
       resources: {}
