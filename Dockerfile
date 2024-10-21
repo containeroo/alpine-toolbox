@@ -57,18 +57,8 @@ RUN apk add --no-cache \
 RUN wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64 && \
   chmod +x /usr/local/bin/yq
 
-RUN echo """
-#!/bin/bash
-
-_term() {
-  echo "Caught SIGTERM signal!"
-  kill -TERM 1 2>/dev/null
-}
-
-trap _term EXIT
-
-sleep infinity
-""" > /usr/bin/forever
+COPY forever.sh /usr/bin/forever
+RUN chmod +x /usr/bin/forever
 
 ENTRYPOINT ["/usr/bin/catatonit", "--"]
 CMD [ "/usr/bin/forever" ]
