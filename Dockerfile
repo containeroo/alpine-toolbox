@@ -57,10 +57,19 @@ RUN apk add --no-cache \
 RUN wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64 && \
   chmod +x /usr/local/bin/yq
 
-# download and install catatonit from GitHub
-ADD https://github.com/openSUSE/catatonit/releases/download/v${CATATONIT_VERSION}/catatonit.x86_64 /usr/bin/catatonit
-RUN chmod +x /usr/bin/catatonit
+RUN echo """
+#!/bin/bash
+
+_term() {
+  echo "Caught SIGTERM signal!"
+  kill -TERM 1 2>/dev/null
+}
+
+trap _term EXIT
+
+sleep infinity
+""" > /usr/bin/forever
 
 ENTRYPOINT ["/usr/bin/catatonit", "--"]
-CMD [ "-P" ]
+CMD [ "/usr/bin/forever" ]
 
