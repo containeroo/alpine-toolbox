@@ -12,7 +12,7 @@ jobs:
           fetch-depth: "0"
       - name: Build Changelog from PRs with labels
         id: github_release
-        uses: mikepenz/release-changelog-builder-action@v4
+        uses: mikepenz/release-changelog-builder-action@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
