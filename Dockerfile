@@ -31,7 +31,7 @@ ARG XMLSTARLET_VERSION=1.6.1-r2
 ARG RSYNC_VERSION=3.3.0-r0
 
 # renovate: datasource=repology depName=alpine_3_20/bind-tools
-ARG BIND_TOOLS_VERSION=9.18.27-r0
+ARG BIND_TOOLS_VERSION=9.18.32-r0
 
 # renovate: datasource=repology depName=alpine_3_20/inetutils-telnet
 ARG INETUTILS_VERSION=2.5-r0
