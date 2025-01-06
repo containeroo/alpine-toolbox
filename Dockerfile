@@ -16,7 +16,7 @@ ARG JQ_VERSION=1.7.1-r0
 ARG TZDATA_VERSION=2024b-r0
 
 # renovate: datasource=repology depName=alpine_3_20/coreutils versioning=loose
-ARG COREUTILS_VERSION=9.5-r1
+ARG COREUTILS_VERSION=9.5-r2
 
 # renovate: datasource=repology depName=alpine_3_20/gettext
 ARG GETTEXT_VERSION=0.22.5-r0
