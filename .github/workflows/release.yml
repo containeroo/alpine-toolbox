@@ -1,11 +1,18 @@
 name: Create Release
 on:
-  push:
-    tags:
-      - v*
+  workflow_call:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - Dockerfile
+  workflow_dispatch:
 jobs:
+  publish:
+    uses: ./.github/workflows/publish.yaml
   release:
     runs-on: ubuntu-latest
+    needs: publish
     steps:
       - uses: actions/checkout@v4
         with:
