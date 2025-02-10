@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 jobs:
   publish:
-    uses: ./.github/workflows/publish.yaml
+    uses: ./.github/workflows/publish.yml
   release:
     runs-on: ubuntu-latest
     needs: publish
