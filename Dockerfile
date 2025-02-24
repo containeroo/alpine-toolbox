@@ -1,39 +1,39 @@
 FROM alpine:3.21.3
 
-# renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/bash versioning=loose
 ARG BASH_VERSION=5.2.26-r0
 
-# renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/curl versioning=loose
 ARG CURL_VERSION=8.12.1-r0
 
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.42.1
 
-# renovate: datasource=repology depName=alpine_3_20/jq versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/jq versioning=loose
 ARG JQ_VERSION=1.7.1-r0
 
-# renovate: datasource=repology depName=alpine_3_20/tzdata versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/tzdata versioning=loose
 ARG TZDATA_VERSION=2025a-r0
 
-# renovate: datasource=repology depName=alpine_3_20/coreutils versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/coreutils versioning=loose
 ARG COREUTILS_VERSION=9.5-r2
 
-# renovate: datasource=repology depName=alpine_3_20/gettext
+# renovate: datasource=repology depName=alpine_3_21/gettext
 ARG GETTEXT_VERSION=0.22.5-r0
 
-# renovate: datasource=repology depName=alpine_3_20/openssl
+# renovate: datasource=repology depName=alpine_3_21/openssl
 ARG OPENSSL_VERSION=3.3.3-r0
 
-# renovate: datasource=repology depName=alpine_3_20/xmlstarlet
+# renovate: datasource=repology depName=alpine_3_21/xmlstarlet
 ARG XMLSTARLET_VERSION=1.6.1-r2
 
-#renovate: datasource=repology depName=alpine_3_20/rsync
+#renovate: datasource=repology depName=alpine_3_21/rsync
 ARG RSYNC_VERSION=3.4.0-r0
 
-# renovate: datasource=repology depName=alpine_3_20/bind-tools
+# renovate: datasource=repology depName=alpine_3_21/bind-tools
 ARG BIND_TOOLS_VERSION=9.18.33-r0
 
-# renovate: datasource=repology depName=alpine_3_20/inetutils-telnet
+# renovate: datasource=repology depName=alpine_3_21/inetutils-telnet
 ARG INETUTILS_VERSION=2.5-r0
 
 # renovate: datasource=github-tags depName=openSUSE/catatonit extractVersion=^v(?<version>.*)$
