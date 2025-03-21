@@ -37,7 +37,7 @@ ARG BIND_TOOLS_VERSION=9.18.34-r0
 ARG INETUTILS_VERSION=2.5-r0
 
 # renovate: datasource=github-tags depName=openSUSE/catatonit extractVersion=^v(?<version>.*)$
-ARG CATATONIT_VERSION=0.2.0
+ARG CATATONIT_VERSION=0.2.1
 
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
