@@ -4,9 +4,9 @@ alpine linux (3.21.3) with following components:
 
 - bash (5.2.37-r0)
 - bind-tools (9.18.24-r1)
-- catatonit (0.2.0)
+- catatonit (0.2.1)
 - coreutils (9.5-r2)
-- curl (8.12.1-r0)
+- curl (8.12.1-r1)
 - gettext (0.22.5-r0)
 - inettools-telnet (2.4-r0)
 - jq (1.7.1-r0)
