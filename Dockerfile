@@ -1,6 +1,6 @@
 FROM alpine:3.21.3
 
-# renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/bash versioning=loose
 ARG BASH_VERSION=5.2.37-r0
 
 # renovate: datasource=repology depName=alpine_3_21/curl versioning=loose
@@ -30,7 +30,7 @@ ARG XMLSTARLET_VERSION=1.6.1-r2
 #renovate: datasource=repology depName=alpine_3_21/rsync
 ARG RSYNC_VERSION=3.4.0-r0
 
-# renovate: datasource=repology depName=alpine_3_20/bind-tools
+# renovate: datasource=repology depName=alpine_3_21/bind-tools
 ARG BIND_TOOLS_VERSION=9.18.34-r0
 
 # renovate: datasource=repology depName=alpine_3_21/inetutils-telnet

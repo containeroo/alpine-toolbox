@@ -2,7 +2,7 @@
 
 alpine linux (3.21.3) with following components:
 
-- bash (5.2.26-r0)
+- bash (5.2.37-r0)
 - bind-tools (9.18.24-r1)
 - catatonit (0.2.0)
 - coreutils (9.5-r2)
@@ -14,4 +14,4 @@ alpine linux (3.21.3) with following components:
 - rsync (3.4.0-r0)
 - tzdata (2025a-r0)
 - xmlstarlet (1.6.1-r2)
-- yq (4.42.1)
+- yq (4.45.1)
