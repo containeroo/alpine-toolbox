@@ -4,7 +4,7 @@ FROM alpine:3.21.3
 ARG BASH_VERSION=5.2.37-r0
 
 # renovate: datasource=repology depName=alpine_3_21/curl versioning=loose
-ARG CURL_VERSION=8.12.1-r0
+ARG CURL_VERSION=8.12.1-r1
 
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.45.1
