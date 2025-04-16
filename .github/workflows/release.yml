@@ -1,34 +1,39 @@
-name: Create Release
+name: Release and Publish
+
 on:
-  workflow_call:
-  pull_request:
-    branches:
-      - master
-    paths:
-      - Dockerfile
-  workflow_dispatch:
+  push:
+    tags:
+      - v*
+
 jobs:
   publish:
-    uses: ./.github/workflows/publish.yml
-  release:
-    runs-on: ubuntu-latest
+    uses: ./.github/workflows/publish.yaml
+
+  readme:
     needs: publish
+    uses: ./.github/workflows/readme.yaml
+
+  release:
+    needs: publish
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: "0"
-      - name: Build Changelog from PRs with labels
+
+      - name: Build Changelog
         id: github_release
         uses: mikepenz/release-changelog-builder-action@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           configuration: ".github/changelog-configuration.json"
+
       - name: Create Release
         uses: actions/create-release@v1
         with:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
-          body: ${{steps.github_release.outputs.changelog}}
+          body: ${{ steps.github_release.outputs.changelog }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

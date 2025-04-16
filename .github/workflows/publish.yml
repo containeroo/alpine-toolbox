@@ -1,10 +1,11 @@
 name: Publish container image
 
 on:
-  push:
-    tags:
-      - v*
-
+  workflow_call:
+    outputs:
+      version:
+        description: "The image version"
+        value: ${{ jobs.multi-arch-build.outputs.version }}
 jobs:
   multi-arch-build:
     runs-on: ubuntu-latest
@@ -36,3 +37,5 @@ jobs:
           tags: |
             ghcr.io/containeroo/alpine-toolbox:latest
             ghcr.io/containeroo/alpine-toolbox:${{ steps.tag.outputs.version }}
+    outputs:
+      version: ${{ steps.tag.outputs.version }}
