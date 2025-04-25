@@ -21,3 +21,7 @@ alpine linux (3.21.3) with following components:
 - tzdata (2025b-r0)
 - xmlstarlet (1.6.1-r2)
 - yq (4.45.1)
+
+## Package missing?
+
+Feel free to create an issue or a pull request to add any missing package you need. You can also create a pull request to add any new package you want to be included in the image. Please make sure to follow the naming conventions and keep the image size as small as possible.
