@@ -1,5 +1,7 @@
 # alpine-toolbox
 
+Alpine Toolbox is a minimal Docker image based on Alpine Linux, designed to provide a lightweight and efficient environment for various command-line tasks. It includes essential tools and utilities commonly used in development, scripting, and system administration as well as debugging and testing.
+
 alpine linux (3.21.3) with following components:
 
 - bash (5.2.37-r0)
