@@ -22,3 +22,6 @@ major: ## Create a new major release (X+1.0.0)
 tag: ## Show latest tag
 	@echo "Latest version: $(LATEST_TAG)"
 
+push: ## Push tags to remote
+	git push --tags
+
