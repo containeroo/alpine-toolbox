@@ -15,13 +15,13 @@ ARG COREUTILS_VERSION=9.7-r1
 # renovate: datasource=repology depName=alpine_3_22/gettext
 ARG GETTEXT_VERSION=0.24.1-r0
 # renovate: datasource=repology depName=alpine_3_22/openssl
-ARG OPENSSL_VERSION=3.5.1-r0
+ARG OPENSSL_VERSION=3.5.2-r0
 # renovate: datasource=repology depName=alpine_3_22/xmlstarlet
 ARG XMLSTARLET_VERSION=1.6.1-r2
 # renovate: datasource=repology depName=alpine_3_22/rsync
 ARG RSYNC_VERSION=3.4.1-r0
 # renovate: datasource=repology depName=alpine_3_22/bind-tools
-ARG BIND_TOOLS_VERSION=9.20.11-r0
+ARG BIND_TOOLS_VERSION=9.20.12-r0
 # renovate: datasource=repology depName=alpine_3_22/inetutils-telnet
 ARG INETUTILS_VERSION=2.6-r0
 
