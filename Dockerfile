@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.18
 FROM alpine:3.22.1
 
 # renovate: datasource=repology depName=alpine_3_22/bash versioning=loose
@@ -15,13 +16,13 @@ ARG COREUTILS_VERSION=9.7-r1
 # renovate: datasource=repology depName=alpine_3_22/gettext
 ARG GETTEXT_VERSION=0.24.1-r0
 # renovate: datasource=repology depName=alpine_3_22/openssl
-ARG OPENSSL_VERSION=3.5.2-r0
+ARG OPENSSL_VERSION=3.5.1-r0
 # renovate: datasource=repology depName=alpine_3_22/xmlstarlet
 ARG XMLSTARLET_VERSION=1.6.1-r2
 # renovate: datasource=repology depName=alpine_3_22/rsync
 ARG RSYNC_VERSION=3.4.1-r0
 # renovate: datasource=repology depName=alpine_3_22/bind-tools
-ARG BIND_TOOLS_VERSION=9.20.12-r0
+ARG BIND_TOOLS_VERSION=9.20.11-r0
 # renovate: datasource=repology depName=alpine_3_22/inetutils-telnet
 ARG INETUTILS_VERSION=2.6-r0
 
@@ -46,24 +47,27 @@ RUN wget -O /usr/local/bin/yq \
   https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64 \
   && chmod +x /usr/local/bin/yq
 
-# catatonit
+# catatonit (tiny init)
 ADD https://github.com/openSUSE/catatonit/releases/download/v${CATATONIT_VERSION}/catatonit.x86_64 /usr/bin/catatonit
 RUN chmod +x /usr/bin/catatonit
 
-# Prepare a work dir that works with both fixed and arbitrary UIDs
+# ---- Runtime identity is chosen at build time ----
+# default = non-root user 10001 with group 0 (OpenShift-friendly)
+ARG RUNTIME_USER=10001
+ARG RUNTIME_GROUP=0
+
+# Writable work dir that works for both fixed UID and OpenShift arbitrary UID
 ENV APP_HOME=/work
 RUN mkdir -p "${APP_HOME}" \
-  && chown -R 10001:0 "${APP_HOME}" \
+  && chown -R ${RUNTIME_USER}:${RUNTIME_GROUP} "${APP_HOME}" \
   && chmod -R g=u "${APP_HOME}"
-
 WORKDIR ${APP_HOME}
 
-USER 10001:0
+# Switch user (numeric IDs; no passwd entry required)
+USER ${RUNTIME_USER}:${RUNTIME_GROUP}
 
-# Graceful termination defaults
 STOPSIGNAL SIGTERM
-
 ENTRYPOINT ["/usr/bin/catatonit", "--"]
-# Toolbox / keep-alive; replace with your real process if needed
+# Replace with your real process if needed
 CMD ["sleep", "infinity"]
 

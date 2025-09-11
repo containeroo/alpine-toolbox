@@ -1,3 +1,4 @@
+# .github/workflows/publish.yaml
 name: Publish container image
 
 on:
@@ -6,36 +7,59 @@ on:
       version:
         description: "The image version"
         value: ${{ jobs.multi-arch-build.outputs.version }}
+
 jobs:
   multi-arch-build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        flavor:
+          - name: nonroot
+            user: "10001"
+            group: "0"
+            suffix: "" # appended to version tag
+            latest: "latest" # extra floating tag
+          - name: root
+            user: "0"
+            group: "0"
+            suffix: "-root"
+            latest: "root"
+
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
       - name: Log in to GitHub Container registry
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Prepare release tag
         id: tag
-        run: echo ::set-output name=version::${GITHUB_REF#refs/tags/v}
-      - name: Build and push
+        run: echo "version=${GITHUB_REF#refs/tags/v}" >> "$GITHUB_OUTPUT"
+
+      - name: Build and push (${{ matrix.flavor.name }})
         uses: docker/build-push-action@v6
         with:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
+          build-args: |
+            RUNTIME_USER=${{ matrix.flavor.user }}
+            RUNTIME_GROUP=${{ matrix.flavor.group }}
           labels: |
             org.opencontainers.image.title=alpine-toolbox
             org.opencontainers.image.description=alpine-toolbox
             org.opencontainers.image.url=https://github.com/containeroo/alpine-toolbox
             org.opencontainers.image.source=https://github.com/containeroo/alpine-toolbox
             org.opencontainers.image.version=${{ steps.tag.outputs.version }}
+            org.opencontainers.image.variant=${{ matrix.flavor.name }}
           tags: |
-            ghcr.io/containeroo/alpine-toolbox:latest
-            ghcr.io/containeroo/alpine-toolbox:${{ steps.tag.outputs.version }}
+            ghcr.io/containeroo/alpine-toolbox:${{ steps.tag.outputs.version }}${{ matrix.flavor.suffix }}
+            ghcr.io/containeroo/alpine-toolbox:${{ matrix.flavor.latest }}
+
     outputs:
       version: ${{ steps.tag.outputs.version }}
