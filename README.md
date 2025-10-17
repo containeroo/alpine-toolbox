@@ -41,6 +41,7 @@ alpine linux (3.22.1) with following components:
 - coreutils (9.7-r1)
 - curl (8.14.1-r1)
 - gettext (0.24.1-r0)
+- git (2.49.1-r0)
 - inetutils-telnet (2.6-r0)
 - jq (1.8.0-r0)
 - openssl (3.5.2-r0)
