@@ -1,4 +1,3 @@
-# .github/workflows/publish.yaml
 name: Publish container image
 
 on:
