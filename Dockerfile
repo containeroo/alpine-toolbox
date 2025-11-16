@@ -16,7 +16,7 @@ ARG GIT_VERSION=2.49.1-r0
 # renovate: datasource=repology depName=alpine_3_22/inetutils-telnet
 ARG INETUTILS_VERSION=2.6-r0
 # renovate: datasource=repology depName=alpine_3_22/jq versioning=loose
-ARG JQ_VERSION=1.8.0-r0
+ARG JQ_VERSION=1.8.1-r0
 # renovate: datasource=repology depName=alpine_3_22/openssl
 ARG OPENSSL_VERSION=3.5.4-r0
 # renovate: datasource=repology depName=alpine_3_22/tzdata versioning=loose
