@@ -3,9 +3,7 @@
   "semanticCommits": "enabled",
   "dependencyDashboard": true,
   "separateMajorMinor": false,
-  "labels": [
-    "dependency"
-  ],
+  "labels": ["dependency"],
   "minimumReleaseAge": "1 day",
   "prCreation": "not-pending",
   "customManagers": [
@@ -23,29 +21,17 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": [
-        "docker",
-        "github-releases",
-        "github-tags"
-      ],
-      "matchUpdateTypes": [
-        "patch",
-        "minor",
-        "major"
-      ],
+      "matchDatasources": ["docker", "github-releases", "github-tags"],
+      "matchUpdateTypes": ["patch", "minor", "major"],
       "enabled": true
     },
     {
-      "matchDatasources": [
-        "repology"
-      ],
+      "matchDatasources": ["repology"],
       "separateMajorMinor": false,
       "groupName": "alpine packages",
       "groupSlug": "alpine",
       "enabled": true,
-      "matchPackageNames": [
-        "/^alpine_3_18//"
-      ]
+      "matchPackageNames": ["/^alpine_3_23//"]
     }
   ],
   "pre-commit": {
