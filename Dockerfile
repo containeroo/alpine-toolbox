@@ -2,17 +2,17 @@
 FROM alpine:3.23.2
 
 # renovate: datasource=repology depName=alpine_3_22/bash versioning=loose
-ARG BASH_VERSION=5.2.37-r0
+ARG BASH_VERSION=5.3.3-r1
 # renovate: datasource=repology depName=alpine_3_22/bind-tools
-ARG BIND_TOOLS_VERSION=9.20.13-r0
+ARG BIND_TOOLS_VERSION=9.20.17-r0
 # renovate: datasource=repology depName=alpine_3_22/coreutils versioning=loose
-ARG COREUTILS_VERSION=9.7-r1
+ARG COREUTILS_VERSION=9.8-r1
 # renovate: datasource=repology depName=alpine_3_22/curl versioning=loose
-ARG CURL_VERSION=8.14.1-r2
+ARG CURL_VERSION=8.17.0-r1
 # renovate: datasource=repology depName=alpine_3_22/gettext
-ARG GETTEXT_VERSION=0.24.1-r0
+ARG GETTEXT_VERSION=0.24.1-r1
 # renovate: datasource=repology depName=alpine_3_22/git
-ARG GIT_VERSION=2.49.1-r0
+ARG GIT_VERSION=2.52.0-r0
 # renovate: datasource=repology depName=alpine_3_22/inetutils-telnet
 ARG INETUTILS_VERSION=2.6-r0
 # renovate: datasource=repology depName=alpine_3_22/jq versioning=loose
@@ -20,7 +20,7 @@ ARG JQ_VERSION=1.8.1-r0
 # renovate: datasource=repology depName=alpine_3_22/openssl
 ARG OPENSSL_VERSION=3.5.4-r0
 # renovate: datasource=repology depName=alpine_3_22/tzdata versioning=loose
-ARG TZDATA_VERSION=2025b-r0
+ARG TZDATA_VERSION=2025c-r0
 # renovate: datasource=repology depName=alpine_3_22/xmlstarlet
 ARG XMLSTARLET_VERSION=1.6.1-r2
 # renovate: datasource=repology depName=alpine_3_22/rsync
