@@ -33,22 +33,22 @@ docker run --rm -it ghcr.io/containeroo/alpine-toolbox:root sh
 
 ## Packages
 
-alpine linux (3.22.2) with following components:
+alpine linux (3.23.2) with following components:
 
-- bash (5.2.37-r0)
-- bind-tools (9.20.13-r0)
+- bash (5.3.3-r1)
+- bind-tools (9.20.17-r0)
 - catatonit (0.2.1)
-- coreutils (9.7-r1)
-- curl (8.14.1-r2)
-- gettext (0.24.1-r0)
-- git (2.49.1-r0)
+- coreutils (9.8-r1)
+- curl (8.17.0-r1)
+- gettext (0.24.1-r1)
+- git (2.52.0-r0)
 - inetutils-telnet (2.6-r0)
-- jq (1.8.0-r0)
+- jq (1.8.1-r0)
 - openssl (3.5.4-r0)
-- rsync (3.4.1-r0)
-- tzdata (2025b-r0)
+- rsync (3.4.1-r1)
+- tzdata (2025c-r0)
 - xmlstarlet (1.6.1-r2)
-- yq (4.47.1)
+- yq (4.50.1)
 
 > The list and versions are auto-updated by CI from the Dockerfile.
 
