@@ -24,7 +24,7 @@ ARG TZDATA_VERSION=2025b-r0
 # renovate: datasource=repology depName=alpine_3_22/xmlstarlet
 ARG XMLSTARLET_VERSION=1.6.1-r2
 # renovate: datasource=repology depName=alpine_3_22/rsync
-ARG RSYNC_VERSION=3.4.1-r0
+ARG RSYNC_VERSION=3.4.1-r1
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.48.1
 
