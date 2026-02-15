@@ -26,7 +26,7 @@ ARG XMLSTARLET_VERSION=1.6.1-r2
 # renovate: datasource=repology depName=alpine_3_22/rsync
 ARG RSYNC_VERSION=3.4.1-r1
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
-ARG YQ_VERSION=4.50.1
+ARG YQ_VERSION=4.52.4
 
 # renovate: datasource=github-tags depName=openSUSE/catatonit extractVersion=^v(?<version>.*)$
 ARG CATATONIT_VERSION=0.2.1
