@@ -1,29 +1,29 @@
 # syntax=docker/dockerfile:1.21
 FROM alpine:3.23.2
 
-# renovate: datasource=repology depName=alpine_3_22/bash versioning=loose
+# renovate: datasource=repology depName=alpine_3_23/bash versioning=loose
 ARG BASH_VERSION=5.3.3-r1
-# renovate: datasource=repology depName=alpine_3_22/bind-tools
+# renovate: datasource=repology depName=alpine_3_23/bind-tools
 ARG BIND_TOOLS_VERSION=9.20.17-r0
-# renovate: datasource=repology depName=alpine_3_22/coreutils versioning=loose
+# renovate: datasource=repology depName=alpine_3_23/coreutils versioning=loose
 ARG COREUTILS_VERSION=9.8-r1
-# renovate: datasource=repology depName=alpine_3_22/curl versioning=loose
+# renovate: datasource=repology depName=alpine_3_23/curl versioning=loose
 ARG CURL_VERSION=8.17.0-r1
-# renovate: datasource=repology depName=alpine_3_22/gettext
+# renovate: datasource=repology depName=alpine_3_23/gettext
 ARG GETTEXT_VERSION=0.24.1-r1
-# renovate: datasource=repology depName=alpine_3_22/git
+# renovate: datasource=repology depName=alpine_3_23/git
 ARG GIT_VERSION=2.52.0-r0
-# renovate: datasource=repology depName=alpine_3_22/inetutils-telnet
+# renovate: datasource=repology depName=alpine_3_23/inetutils-telnet
 ARG INETUTILS_VERSION=2.6-r0
-# renovate: datasource=repology depName=alpine_3_22/jq versioning=loose
+# renovate: datasource=repology depName=alpine_3_23/jq versioning=loose
 ARG JQ_VERSION=1.8.1-r0
-# renovate: datasource=repology depName=alpine_3_22/openssl
+# renovate: datasource=repology depName=alpine_3_23/openssl
 ARG OPENSSL_VERSION=3.5.4-r0
-# renovate: datasource=repology depName=alpine_3_22/tzdata versioning=loose
+# renovate: datasource=repology depName=alpine_3_23/tzdata versioning=loose
 ARG TZDATA_VERSION=2025c-r0
-# renovate: datasource=repology depName=alpine_3_22/xmlstarlet
+# renovate: datasource=repology depName=alpine_3_23/xmlstarlet
 ARG XMLSTARLET_VERSION=1.6.1-r2
-# renovate: datasource=repology depName=alpine_3_22/rsync
+# renovate: datasource=repology depName=alpine_3_23/rsync
 ARG RSYNC_VERSION=3.4.1-r1
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.50.1
