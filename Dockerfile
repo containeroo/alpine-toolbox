@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.21
-FROM alpine:3.23.2
+FROM alpine:3.23.3
 
 # renovate: datasource=repology depName=alpine_3_23/bash versioning=loose
 ARG BASH_VERSION=5.3.3-r1
