@@ -6,6 +6,7 @@ repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "${repo_root}"
 
 dockerfile="${repo_root}/Dockerfile"
+update_report_file="${ALPINE_UPDATE_REPORT_FILE:-}"
 
 tmpdir="$(mktemp -d)"
 trap 'rm -rf "${tmpdir}"' EXIT
@@ -107,7 +108,7 @@ build_package_manifest() {
 }
 
 # Compares pinned versions against the latest APKINDEX versions and writes only
-# changed ARG assignments to a TSV file.
+# changed packages to a TSV file including the old and new version.
 build_update_manifest() {
   local package_manifest="$1"
   local updates_file="$2"
@@ -123,7 +124,12 @@ build_update_manifest() {
     latest_version="${resolved#*$'\t'}"
 
     if [ "${latest_version}" != "${current_version}" ]; then
-      printf '%s\t%s\n' "${arg_name}" "${latest_version}" >> "${updates_file}"
+      printf '%s\t%s\t%s\t%s\t%s\n' \
+        "${arg_name}" \
+        "${package_name}" \
+        "${current_version}" \
+        "${latest_version}" \
+        "${resolved_repo}" >> "${updates_file}"
     fi
   done < "${package_manifest}"
 }
@@ -134,10 +140,28 @@ apply_updates() {
   local rewritten_dockerfile="${tmpdir}/Dockerfile.new"
 
   cp "${dockerfile}" "${rewritten_dockerfile}"
-  while IFS=$'\t' read -r arg_name latest_version; do
+  while IFS=$'\t' read -r arg_name _package_name _current_version latest_version _repo_name; do
     sed -i -r "s#^(ARG ${arg_name}=).*#\\1${latest_version}#" "${rewritten_dockerfile}"
   done < "${updates_file}"
   mv "${rewritten_dockerfile}" "${dockerfile}"
+}
+
+# Writes a Markdown table for the PR body so version changes are easy to review.
+write_update_report() {
+  local updates_file="$1"
+  local report_file="$2"
+
+  {
+    echo "| Package | From | To | Repo |"
+    echo "| --- | --- | --- | --- |"
+    while IFS=$'\t' read -r _arg_name package_name current_version latest_version repo_name; do
+      printf '| `%s` | `%s` | `%s` | `%s` |\n' \
+        "${package_name}" \
+        "${current_version}" \
+        "${latest_version}" \
+        "${repo_name}"
+    done < "${updates_file}"
+  } > "${report_file}"
 }
 
 alpine_version="$(get_alpine_version)"
@@ -163,6 +187,10 @@ apply_updates "${updates}"
 
 # Keep the README package table aligned with the Dockerfile after any bump.
 "${repo_root}/.github/scripts/sync-readme.sh"
+
+if [ -n "${update_report_file}" ]; then
+  write_update_report "${updates}" "${update_report_file}"
+fi
 
 echo "Updated Alpine package versions:"
 cat "${updates}"
