@@ -20,11 +20,11 @@ ARG JQ_VERSION=1.8.1-r0
 # renovate: datasource=repology depName=alpine_3_23/openssl
 ARG OPENSSL_VERSION=3.5.4-r0
 # renovate: datasource=repology depName=alpine_3_23/tzdata versioning=loose
-ARG TZDATA_VERSION=2025c-r0
+ARG TZDATA_VERSION=2026b-r0
 # renovate: datasource=repology depName=alpine_3_23/xmlstarlet
 ARG XMLSTARLET_VERSION=1.6.1-r2
 # renovate: datasource=repology depName=alpine_3_23/rsync
-ARG RSYNC_VERSION=3.4.1-r1
+ARG RSYNC_VERSION=3.4.1-r2
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.53.2
 
