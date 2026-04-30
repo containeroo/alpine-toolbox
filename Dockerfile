@@ -4,7 +4,7 @@ FROM alpine:3.23.4
 # alpine-package: name=bash repo=main
 ARG BASH_VERSION=5.3.3-r1
 # alpine-package: name=bind-tools repo=main
-ARG BIND_TOOLS_VERSION=9.20.17-r0
+ARG BIND_TOOLS_VERSION=9.20.22-r0
 # alpine-package: name=coreutils repo=main
 ARG COREUTILS_VERSION=9.8-r1
 # alpine-package: name=curl repo=main
@@ -18,13 +18,13 @@ ARG INETUTILS_VERSION=2.6-r0
 # alpine-package: name=jq repo=main
 ARG JQ_VERSION=1.8.1-r0
 # alpine-package: name=openssl repo=main
-ARG OPENSSL_VERSION=3.5.4-r0
+ARG OPENSSL_VERSION=3.5.6-r0
 # alpine-package: name=tzdata repo=main
 ARG TZDATA_VERSION=2026b-r0
 # alpine-package: name=xmlstarlet repo=main
 ARG XMLSTARLET_VERSION=1.6.1-r2
 # alpine-package: name=rsync repo=main
-ARG RSYNC_VERSION=3.4.1-r2
+ARG RSYNC_VERSION=3.4.2-r0
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.53.2
 
