@@ -21,13 +21,17 @@ RUN case "${TARGETARCH}" in \
   && chmod +x /usr/local/bin/yq
 
 RUN apk add --no-cache \
+  autoconf \
+  automake \
   build-base \
+  libtool \
   xz \
   && mkdir -p /tmp/catatonit \
   && wget -O /tmp/catatonit/catatonit.tar.xz \
   "https://github.com/openSUSE/catatonit/releases/download/v${CATATONIT_VERSION}/catatonit.tar.xz" \
   && tar -xJf /tmp/catatonit/catatonit.tar.xz -C /tmp/catatonit --strip-components=1 \
   && cd /tmp/catatonit \
+  && ./autogen.sh \
   && ./configure \
   && make \
   && install -m 0755 catatonit /usr/local/bin/catatonit
