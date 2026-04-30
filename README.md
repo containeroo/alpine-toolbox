@@ -4,6 +4,13 @@
 
 Alpine Toolbox is a minimal Docker image based on Alpine Linux, designed to provide a lightweight and efficient environment for various command-line tasks. It includes essential tools and utilities commonly used in development, scripting, and system administration as well as debugging and testing.
 
+## TL;DR
+
+- Use `:latest` for the non-root OpenShift-friendly image and `:root` if you explicitly need runtime `apk add`.
+- Images are published for `linux/amd64` and `linux/arm64`.
+- Alpine package pins are updated by the scheduled Alpine updater workflow, while Renovate handles GitHub-sourced binaries such as `yq` and `catatonit`.
+- The image is designed around `UID 10001` and `GID 0` so it works well on vanilla Kubernetes and OpenShift.
+
 ## Images & tags
 
 We publish two variants so you can choose what fits your platform:
@@ -65,18 +72,16 @@ Feel free to create an issue or a pull request to add any missing package you ne
 
 This image is built to run safely as **non-root** on vanilla Kubernetes **and** OpenShift, while still allowing write access where needed.
 
+> TL;DR: use a stable non-root UID, make writable paths group-owned by `0`, and set `g+w`. That keeps the image portable across Kubernetes and OpenShift arbitrary-UID execution.
+
 ### Why UID `10001`?
 
 - **Non-root by default.** Using a fixed, high, non-system UID like `10001` makes the image safe in vanilla Kubernetes and most CI/CD runners without extra flags.
 - **Low collision risk.** High UIDs are unlikely to clash with host/system accounts inside the container.
 - **Portable.** In OpenShift, the platform may **override** the UID at runtime with an arbitrary, non-root UID. Starting from a non-root UID keeps behavior consistent across platforms.
 
-> TL;DR: `10001` is a conventional, stable, non-root choice that works everywhere. OpenShift can still inject its own arbitrary UID at runtime.
-
 ### Why Group `0` (root group)?
 
 - **Arbitrary-UID compatibility (OpenShift).** OpenShift commonly runs containers with a **random non-root UID**, and includes **group 0** in the process’s groups.
 - **Make dirs group-writable.** If your writable paths are **group-owned by `0`** and have **group-write** permissions, the arbitrary UID can still write there because it’s in group 0.
 - **No special privileges.** Being in **group 0 ≠ root**. Privileges come from UID 0 or Linux capabilities, not from the group number. We also drop capabilities in the pod security context.
-
-> TL;DR: chown/chgrp writable paths to **group 0** and set **`g+w`**. That’s the standard pattern to make images “arbitrary-UID friendly” for OpenShift while remaining safe elsewhere.
