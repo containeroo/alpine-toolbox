@@ -36,7 +36,7 @@ docker run --rm -it ghcr.io/containeroo/alpine-toolbox:root sh
 alpine linux (3.23.4) with following components:
 
 - bash (5.3.3-r1)
-- bind-tools (9.20.17-r0)
+- bind-tools (9.20.22-r0)
 - catatonit (0.2.1)
 - coreutils (9.8-r1)
 - curl (8.17.0-r1)
@@ -44,8 +44,8 @@ alpine linux (3.23.4) with following components:
 - git (2.52.0-r0)
 - inetutils-telnet (2.6-r0)
 - jq (1.8.1-r0)
-- openssl (3.5.4-r0)
-- rsync (3.4.1-r2)
+- openssl (3.5.6-r0)
+- rsync (3.4.2-r0)
 - tzdata (2026b-r0)
 - xmlstarlet (1.6.1-r2)
 - yq (4.53.2)
