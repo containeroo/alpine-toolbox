@@ -13,7 +13,7 @@ ARG CURL_VERSION=8.17.0-r1
 ARG GETTEXT_VERSION=0.24.1-r1
 # alpine-package: name=git repo=main
 ARG GIT_VERSION=2.52.0-r0
-# alpine-package: name=inetutils-telnet repo=main
+# alpine-package: name=inetutils-telnet repo=community
 ARG INETUTILS_VERSION=2.6-r0
 # alpine-package: name=jq repo=main
 ARG JQ_VERSION=1.8.1-r0

@@ -47,6 +47,35 @@ lookup_version() {
   ' "${index_file}"
 }
 
+# Resolves a package version using the preferred repo first, then falls back to
+# the other downloaded repos if the package moved or the repo hint is stale.
+resolve_version() {
+  local package_name="$1"
+  local preferred_repo="$2"
+  local latest_version
+
+  latest_version="$(lookup_version "${package_name}" "${preferred_repo}")"
+  if [ -n "${latest_version}" ]; then
+    printf '%s\t%s\n' "${preferred_repo}" "${latest_version}"
+    return 0
+  fi
+
+  for repo_name in "${!repo_index_files[@]}"; do
+    if [ "${repo_name}" = "${preferred_repo}" ]; then
+      continue
+    fi
+
+    latest_version="$(lookup_version "${package_name}" "${repo_name}")"
+    if [ -n "${latest_version}" ]; then
+      echo "Package ${package_name} was not found in ${preferred_repo}; using ${repo_name}" >&2
+      printf '%s\t%s\n' "${repo_name}" "${latest_version}"
+      return 0
+    fi
+  done
+
+  return 1
+}
+
 # Extracts the Alpine-managed version pins from the Dockerfile into a TSV file:
 # ARG_NAME, package name, repository, current version.
 build_package_manifest() {
@@ -84,12 +113,14 @@ build_update_manifest() {
   local updates_file="$2"
 
   while IFS=$'\t' read -r arg_name package_name repo_name current_version; do
-    local latest_version
-    latest_version="$(lookup_version "${package_name}" "${repo_name}")"
-    if [ -z "${latest_version}" ]; then
-      echo "Could not find ${package_name} in ${repo_name}" >&2
+    local resolved resolved_repo latest_version
+    resolved="$(resolve_version "${package_name}" "${repo_name}")"
+    if [ -z "${resolved}" ]; then
+      echo "Could not find ${package_name} in ${repo_name} or any configured Alpine repo" >&2
       exit 1
     fi
+    resolved_repo="${resolved%%$'\t'*}"
+    latest_version="${resolved#*$'\t'}"
 
     if [ "${latest_version}" != "${current_version}" ]; then
       printf '%s\t%s\n' "${arg_name}" "${latest_version}" >> "${updates_file}"
