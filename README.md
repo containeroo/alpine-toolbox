@@ -33,7 +33,7 @@ docker run --rm -it ghcr.io/containeroo/alpine-toolbox:root sh
 
 ## Packages
 
-alpine linux (3.23.2) with following components:
+alpine linux (3.23.4) with following components:
 
 - bash (5.3.3-r1)
 - bind-tools (9.20.17-r0)
@@ -45,12 +45,17 @@ alpine linux (3.23.2) with following components:
 - inetutils-telnet (2.6-r0)
 - jq (1.8.1-r0)
 - openssl (3.5.4-r0)
-- rsync (3.4.1-r1)
-- tzdata (2025c-r0)
+- rsync (3.4.1-r2)
+- tzdata (2026b-r0)
 - xmlstarlet (1.6.1-r2)
-- yq (4.50.1)
+- yq (4.53.2)
 
 > The list and versions are auto-updated by CI from the Dockerfile.
+
+## Dependency updates
+
+- Alpine packages are updated by the scheduled GitHub workflow in `.github/workflows/update-alpine-packages.yaml`, which reads the official Alpine `APKINDEX` metadata for the Alpine version pinned in the `Dockerfile`.
+- Renovate remains enabled for non-Alpine dependencies such as GitHub release and tag based binaries.
 
 ## Package missing?
 

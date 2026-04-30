@@ -19,27 +19,8 @@ jobs:
           ref: ${{ steps.def.outputs.branch }}
           fetch-depth: 0
 
-      - name: Update datasource in Dockerfile
-        run: |
-          sed -r -n 's/.*alpine:([0-9])\.([0-9]+).*/\1 \2/p' Dockerfile | \
-          xargs -n2 bash -lc \
-            'sed -i -r "s/alpine_[0-9]_[0-9]+/alpine_${0}_${1}/" Dockerfile'
-
-      - name: Update component versions in README.md
-        shell: bash
-        run: |
-          mapfile -t lines < <(sed -rn 's/^(ARG|ENV)[[:space:]]+([A-Z0-9_]+)_VERSION(=|[[:space:]])(.*)$/\L\2 \4/p' Dockerfile | tr '_' '-')
-          for l in "${lines[@]}"; do
-            name="${l% *}"
-            ver="${l#* }"
-            # Update lines like "- bash (...)" regardless of current version
-            sed -i -r "s#(^- *${name})( .*|\$)#\1 (${ver})#" README.md
-          done
-
-      - name: Update alpine version in README.md
-        run: |
-          ver=$(sed -rn 's/^FROM[[:space:]]+alpine:(.*)$/\1/p' Dockerfile)
-          [ -n "$ver" ] && sed -i -r "s#(alpine linux )\([^)]*\)( with)#\1(${ver})\2#i" README.md
+      - name: Sync README.md
+        run: ./.github/scripts/sync-readme.sh
 
       - name: Push updated README.md
         uses: EndBug/add-and-commit@v10

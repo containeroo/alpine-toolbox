@@ -24,14 +24,6 @@
       "matchDatasources": ["docker", "github-releases", "github-tags"],
       "matchUpdateTypes": ["patch", "minor", "major"],
       "enabled": true
-    },
-    {
-      "matchDatasources": ["repology"],
-      "separateMajorMinor": false,
-      "groupName": "alpine packages",
-      "groupSlug": "alpine",
-      "enabled": true,
-      "matchPackageNames": ["/^alpine_3_23//"]
     }
   ],
   "pre-commit": {

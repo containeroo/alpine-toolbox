@@ -1,29 +1,29 @@
 # syntax=docker/dockerfile:1.23
 FROM alpine:3.23.4
 
-# renovate: datasource=repology depName=alpine_3_23/bash versioning=loose
+# alpine-package: name=bash repo=main
 ARG BASH_VERSION=5.3.3-r1
-# renovate: datasource=repology depName=alpine_3_23/bind-tools
+# alpine-package: name=bind-tools repo=main
 ARG BIND_TOOLS_VERSION=9.20.17-r0
-# renovate: datasource=repology depName=alpine_3_23/coreutils versioning=loose
+# alpine-package: name=coreutils repo=main
 ARG COREUTILS_VERSION=9.8-r1
-# renovate: datasource=repology depName=alpine_3_23/curl versioning=loose
+# alpine-package: name=curl repo=main
 ARG CURL_VERSION=8.17.0-r1
-# renovate: datasource=repology depName=alpine_3_23/gettext
+# alpine-package: name=gettext repo=main
 ARG GETTEXT_VERSION=0.24.1-r1
-# renovate: datasource=repology depName=alpine_3_23/git
+# alpine-package: name=git repo=main
 ARG GIT_VERSION=2.52.0-r0
-# renovate: datasource=repology depName=alpine_3_23/inetutils-telnet
+# alpine-package: name=inetutils-telnet repo=main
 ARG INETUTILS_VERSION=2.6-r0
-# renovate: datasource=repology depName=alpine_3_23/jq versioning=loose
+# alpine-package: name=jq repo=main
 ARG JQ_VERSION=1.8.1-r0
-# renovate: datasource=repology depName=alpine_3_23/openssl
+# alpine-package: name=openssl repo=main
 ARG OPENSSL_VERSION=3.5.4-r0
-# renovate: datasource=repology depName=alpine_3_23/tzdata versioning=loose
+# alpine-package: name=tzdata repo=main
 ARG TZDATA_VERSION=2026b-r0
-# renovate: datasource=repology depName=alpine_3_23/xmlstarlet
+# alpine-package: name=xmlstarlet repo=main
 ARG XMLSTARLET_VERSION=1.6.1-r2
-# renovate: datasource=repology depName=alpine_3_23/rsync
+# alpine-package: name=rsync repo=main
 ARG RSYNC_VERSION=3.4.1-r2
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
 ARG YQ_VERSION=4.53.2
@@ -73,4 +73,3 @@ STOPSIGNAL SIGTERM
 ENTRYPOINT ["/usr/bin/catatonit", "--"]
 # Replace with your real process if needed
 CMD ["sleep", "infinity"]
-
