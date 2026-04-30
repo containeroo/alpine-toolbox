@@ -46,4 +46,6 @@ jobs:
           commit-message: "chore: update Alpine package versions"
           title: "chore: update Alpine package versions"
           body: ${{ steps.pr-body.outputs.body }}
-          labels: dependency
+          labels: |
+            dependency
+            bump:patch

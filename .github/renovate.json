@@ -24,6 +24,42 @@
       "matchDatasources": ["docker", "github-releases", "github-tags"],
       "matchUpdateTypes": ["patch", "minor", "major"],
       "enabled": true
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["alpine"],
+      "matchUpdateTypes": ["patch"],
+      "addLabels": ["bump:patch"]
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["alpine"],
+      "matchUpdateTypes": ["minor"],
+      "addLabels": ["bump:minor"]
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["alpine"],
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["bump:major"]
+    },
+    {
+      "matchDatasources": ["github-releases", "github-tags"],
+      "matchPackageNames": ["mikefarah/yq", "openSUSE/catatonit"],
+      "matchUpdateTypes": ["patch"],
+      "addLabels": ["bump:patch"]
+    },
+    {
+      "matchDatasources": ["github-releases", "github-tags"],
+      "matchPackageNames": ["mikefarah/yq", "openSUSE/catatonit"],
+      "matchUpdateTypes": ["minor"],
+      "addLabels": ["bump:minor"]
+    },
+    {
+      "matchDatasources": ["github-releases", "github-tags"],
+      "matchPackageNames": ["mikefarah/yq", "openSUSE/catatonit"],
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["bump:major"]
     }
   ],
   "pre-commit": {
