@@ -1,4 +1,37 @@
 # syntax=docker/dockerfile:1.23
+FROM alpine:3.23.4 AS builder
+
+# BuildKit automatically provides the target architecture for multi-platform builds.
+ARG TARGETARCH
+
+# renovate: datasource=github-tags depName=openSUSE/catatonit extractVersion=^v(?<version>.*)$
+ARG CATATONIT_VERSION=0.2.1
+
+# renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
+ARG YQ_VERSION=4.53.2
+
+# yq
+RUN case "${TARGETARCH}" in \
+  amd64) yq_arch='amd64' ;; \
+  arm64) yq_arch='arm64' ;; \
+  *) echo "Unsupported TARGETARCH for yq: ${TARGETARCH}" >&2; exit 1 ;; \
+  esac \
+  && wget -O /usr/local/bin/yq \
+  "https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_${yq_arch}" \
+  && chmod +x /usr/local/bin/yq
+
+RUN apk add --no-cache \
+  build-base \
+  xz \
+  && mkdir -p /tmp/catatonit \
+  && wget -O /tmp/catatonit/catatonit.tar.xz \
+  "https://github.com/openSUSE/catatonit/releases/download/v${CATATONIT_VERSION}/catatonit.tar.xz" \
+  && tar -xJf /tmp/catatonit/catatonit.tar.xz -C /tmp/catatonit --strip-components=1 \
+  && cd /tmp/catatonit \
+  && ./configure \
+  && make \
+  && install -m 0755 catatonit /usr/local/bin/catatonit
+
 FROM alpine:3.23.4
 
 # alpine-package: name=bash repo=main
@@ -25,11 +58,6 @@ ARG TZDATA_VERSION=2026b-r0
 ARG XMLSTARLET_VERSION=1.6.1-r2
 # alpine-package: name=rsync repo=main
 ARG RSYNC_VERSION=3.4.2-r0
-# renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
-ARG YQ_VERSION=4.53.2
-
-# renovate: datasource=github-tags depName=openSUSE/catatonit extractVersion=^v(?<version>.*)$
-ARG CATATONIT_VERSION=0.2.1
 
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
@@ -46,13 +74,10 @@ RUN apk add --no-cache \
   xmlstarlet==${XMLSTARLET_VERSION}
 
 # yq
-RUN wget -O /usr/local/bin/yq \
-  https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_linux_amd64 \
-  && chmod +x /usr/local/bin/yq
+COPY --from=builder /usr/local/bin/yq /usr/local/bin/yq
 
 # catatonit (tiny init)
-ADD https://github.com/openSUSE/catatonit/releases/download/v${CATATONIT_VERSION}/catatonit.x86_64 /usr/bin/catatonit
-RUN chmod +x /usr/bin/catatonit
+COPY --from=builder /usr/local/bin/catatonit /usr/bin/catatonit
 
 # ---- Runtime identity is chosen at build time ----
 # default = non-root user 10001 with group 0 (OpenShift-friendly)
