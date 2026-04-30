@@ -40,7 +40,8 @@ docker run --rm -it ghcr.io/containeroo/alpine-toolbox:root sh
 
 ## Packages
 
-alpine linux (3.23.4) with following components:
+alpine linux (3.23.4 AS builder
+3.23.4) with following components:
 
 - bash (5.3.3-r1)
 - bind-tools (9.20.22-r0)
