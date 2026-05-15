@@ -47,7 +47,7 @@ alpine linux (3.23.4 AS builder
 - bind-tools (9.20.22-r0)
 - catatonit (0.2.1)
 - coreutils (9.8-r1)
-- curl (8.17.0-r1)
+- curl (8.19.0-r0)
 - gettext (0.24.1-r1)
 - git (2.52.0-r0)
 - inetutils-telnet (2.6-r0)
