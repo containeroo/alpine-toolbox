@@ -45,7 +45,7 @@ ARG BIND_TOOLS_VERSION=9.20.22-r0
 # alpine-package: name=coreutils repo=main
 ARG COREUTILS_VERSION=9.8-r1
 # alpine-package: name=curl repo=main
-ARG CURL_VERSION=8.17.0-r1
+ARG CURL_VERSION=8.19.0-r0
 # alpine-package: name=gettext repo=main
 ARG GETTEXT_VERSION=0.24.1-r1
 # alpine-package: name=git repo=main
