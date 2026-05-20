@@ -61,7 +61,7 @@ ARG TZDATA_VERSION=2026b-r0
 # alpine-package: name=xmlstarlet repo=community
 ARG XMLSTARLET_VERSION=1.6.1-r2
 # alpine-package: name=rsync repo=main
-ARG RSYNC_VERSION=3.4.2-r0
+ARG RSYNC_VERSION=3.4.3-r0
 
 RUN apk add --no-cache \
   bash==${BASH_VERSION} \
