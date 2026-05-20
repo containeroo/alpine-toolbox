@@ -53,7 +53,7 @@ alpine linux (3.23.4 AS builder
 - inetutils-telnet (2.6-r0)
 - jq (1.8.1-r0)
 - openssl (3.5.6-r0)
-- rsync (3.4.2-r0)
+- rsync (3.4.3-r0)
 - tzdata (2026b-r0)
 - xmlstarlet (1.6.1-r2)
 - yq (4.53.2)
