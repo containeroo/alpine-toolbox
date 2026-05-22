@@ -44,7 +44,7 @@ alpine linux (3.23.4 AS builder
 3.23.4) with following components:
 
 - bash (5.3.3-r1)
-- bind-tools (9.20.22-r0)
+- bind-tools (9.20.23-r0)
 - catatonit (0.2.1)
 - coreutils (9.8-r1)
 - curl (8.19.0-r0)
