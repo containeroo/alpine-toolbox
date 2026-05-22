@@ -41,7 +41,7 @@ FROM alpine:3.23.4
 # alpine-package: name=bash repo=main
 ARG BASH_VERSION=5.3.3-r1
 # alpine-package: name=bind-tools repo=main
-ARG BIND_TOOLS_VERSION=9.20.22-r0
+ARG BIND_TOOLS_VERSION=9.20.23-r0
 # alpine-package: name=coreutils repo=main
 ARG COREUTILS_VERSION=9.8-r1
 # alpine-package: name=curl repo=main
