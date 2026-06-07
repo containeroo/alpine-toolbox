@@ -8,7 +8,7 @@ ARG TARGETARCH
 ARG CATATONIT_VERSION=0.2.1
 
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
-ARG YQ_VERSION=4.53.2
+ARG YQ_VERSION=4.53.3
 
 # yq
 RUN case "${TARGETARCH}" in \
