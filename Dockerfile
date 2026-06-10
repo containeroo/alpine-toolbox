@@ -55,7 +55,7 @@ ARG INETUTILS_VERSION=2.6-r0
 # alpine-package: name=jq repo=main
 ARG JQ_VERSION=1.8.1-r0
 # alpine-package: name=openssl repo=main
-ARG OPENSSL_VERSION=3.5.6-r0
+ARG OPENSSL_VERSION=3.5.7-r0
 # alpine-package: name=tzdata repo=main
 ARG TZDATA_VERSION=2026b-r0
 # alpine-package: name=xmlstarlet repo=community

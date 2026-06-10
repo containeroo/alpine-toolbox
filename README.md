@@ -52,7 +52,7 @@ alpine linux (3.23.4 AS builder
 - git (2.52.0-r0)
 - inetutils-telnet (2.6-r0)
 - jq (1.8.1-r0)
-- openssl (3.5.6-r0)
+- openssl (3.5.7-r0)
 - rsync (3.4.3-r0)
 - tzdata (2026b-r0)
 - xmlstarlet (1.6.1-r2)
