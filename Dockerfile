@@ -45,7 +45,7 @@ ARG BIND_TOOLS_VERSION=9.20.23-r0
 # alpine-package: name=coreutils repo=main
 ARG COREUTILS_VERSION=9.8-r1
 # alpine-package: name=curl repo=main
-ARG CURL_VERSION=8.19.0-r0
+ARG CURL_VERSION=8.20.0-r0
 # alpine-package: name=gettext repo=main
 ARG GETTEXT_VERSION=0.24.1-r1
 # alpine-package: name=git repo=main
@@ -57,7 +57,7 @@ ARG JQ_VERSION=1.8.1-r0
 # alpine-package: name=openssl repo=main
 ARG OPENSSL_VERSION=3.5.7-r0
 # alpine-package: name=tzdata repo=main
-ARG TZDATA_VERSION=2026b-r0
+ARG TZDATA_VERSION=2026c-r0
 # alpine-package: name=xmlstarlet repo=community
 ARG XMLSTARLET_VERSION=1.6.1-r2
 # alpine-package: name=rsync repo=main
