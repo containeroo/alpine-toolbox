@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.24
+# syntax=docker/dockerfile:1.25
 FROM alpine:3.23.4 AS builder
 
 # BuildKit automatically provides the target architecture for multi-platform builds.
