@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.24
-FROM alpine:3.23.4 AS builder
+FROM alpine:3.24.1 AS builder
 
 # BuildKit automatically provides the target architecture for multi-platform builds.
 ARG TARGETARCH
@@ -36,7 +36,7 @@ RUN apk add --no-cache \
   && make \
   && install -m 0755 catatonit /usr/local/bin/catatonit
 
-FROM alpine:3.23.4
+FROM alpine:3.24.1
 
 # alpine-package: name=bash repo=main
 ARG BASH_VERSION=5.3.3-r1
