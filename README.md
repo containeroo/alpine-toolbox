@@ -8,7 +8,7 @@ Alpine Toolbox is a minimal Docker image based on Alpine Linux, designed to prov
 
 - Use `:latest` for the non-root OpenShift-friendly image and `:root` if you explicitly need runtime `apk add`.
 - Images are published for `linux/amd64` and `linux/arm64`.
-- Alpine package pins are updated by the scheduled Alpine updater workflow, while Renovate handles GitHub-sourced binaries such as `yq` and `catatonit`.
+- Alpine package pins are updated by the scheduled Alpine updater workflow, while Renovate handles GitHub-sourced binaries such as `yq`.
 - The image is designed around `UID 10001` and `GID 0` so it works well on vanilla Kubernetes and OpenShift.
 
 ## Images & tags
@@ -40,30 +40,29 @@ docker run --rm -it ghcr.io/containeroo/alpine-toolbox:root sh
 
 ## Packages
 
-alpine linux (3.23.4 AS builder
-3.23.4) with following components:
+alpine linux (3.24.1) with following components:
 
-- bash (5.3.3-r1)
+- bash (5.3.9-r1)
 - bind-tools (9.20.26-r0)
-- catatonit (0.2.1)
-- coreutils (9.8-r1)
-- curl (8.20.0-r0)
-- gettext (0.24.1-r1)
-- git (2.52.0-r0)
-- inetutils-telnet (2.6-r0)
+- catatonit (0.2.1-r0)
+- coreutils (9.11-r0)
+- curl (8.21.0-r0)
+- gettext-envsubst (1.0-r0)
+- git (2.54.0-r0)
+- inetutils-telnet (2.7-r0)
 - jq (1.8.1-r0)
 - openssl (3.5.7-r0)
-- rsync (3.4.3-r0)
+- rsync (3.4.3-r1)
 - tzdata (2026c-r0)
 - xmlstarlet (1.6.1-r2)
-- yq (4.53.2)
+- yq (4.53.3)
 
 > The list and versions are auto-updated by CI from the Dockerfile.
 
 ## Dependency updates
 
 - Alpine packages are updated by the scheduled GitHub workflow in `.github/workflows/update-alpine-packages.yaml`, which reads the official Alpine `APKINDEX` metadata for the Alpine version pinned in the `Dockerfile`.
-- Renovate remains enabled for non-Alpine dependencies such as GitHub release and tag based binaries.
+- Renovate remains enabled for non-Alpine dependencies such as GitHub release based binaries like `yq`.
 
 ## Package missing?
 

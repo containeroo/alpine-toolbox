@@ -46,12 +46,11 @@ get_version_lines() {
 
 # Rewrites the package list entries in README.md so they match the Dockerfile.
 sync_package_versions() {
-  mapfile -t lines < <(get_version_lines)
-  for l in "${lines[@]}"; do
+  while IFS= read -r l; do
     local name="${l% *}"
     local ver="${l#* }"
     perl -0pi -e "s{(^- *\\Q${name}\\E)( .*|\$)}{\$1 (${ver})}mg" README.md
-  done
+  done < <(get_version_lines)
 }
 
 # Rewrites the documented Alpine base version in README.md.
