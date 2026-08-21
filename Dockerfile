@@ -29,7 +29,7 @@ ARG TZDATA_VERSION=2026c-r0
 ARG XMLSTARLET_VERSION=1.6.1-r2
 
 # renovate: datasource=github-releases depName=mikefarah/yq extractVersion=^v(?<version>.*)$
-ARG YQ_VERSION=4.53.3
+ARG YQ_VERSION=4.53.6
 
 RUN apk add --no-cache \
   "bash=${BASH_VERSION}" \
