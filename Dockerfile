@@ -22,7 +22,7 @@ ARG JQ_VERSION=1.8.1-r0
 # alpine-package: name=openssl repo=main
 ARG OPENSSL_VERSION=3.5.8-r0
 # alpine-package: name=rsync repo=main
-ARG RSYNC_VERSION=3.4.3-r1
+ARG RSYNC_VERSION=3.5.0-r0
 # alpine-package: name=tzdata repo=main
 ARG TZDATA_VERSION=2026c-r0
 # alpine-package: name=xmlstarlet repo=community
