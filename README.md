@@ -46,7 +46,7 @@ alpine linux (3.24.1) with following components:
 - bind-tools (9.20.26-r0)
 - catatonit (0.2.1-r0)
 - coreutils (9.11-r0)
-- curl (8.21.0-r0)
+- curl (8.22.0-r0)
 - gettext-envsubst (1.0-r0)
 - git (2.54.0-r0)
 - inetutils-telnet (2.7-r0)
