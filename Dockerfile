@@ -10,7 +10,7 @@ ARG CATATONIT_VERSION=0.2.1-r0
 # alpine-package: name=coreutils repo=main
 ARG COREUTILS_VERSION=9.11-r0
 # alpine-package: name=curl repo=main
-ARG CURL_VERSION=8.21.0-r0
+ARG CURL_VERSION=8.22.0-r0
 # alpine-package: name=gettext-envsubst repo=main
 ARG GETTEXT_ENVSUBST_VERSION=1.0-r0
 # alpine-package: name=git repo=main
