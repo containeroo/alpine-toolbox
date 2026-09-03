@@ -4,7 +4,7 @@ FROM alpine:3.24.1
 # alpine-package: name=bash repo=main
 ARG BASH_VERSION=5.3.9-r1
 # alpine-package: name=bind-tools repo=main
-ARG BIND_TOOLS_VERSION=9.20.26-r0
+ARG BIND_TOOLS_VERSION=9.20.27-r0
 # alpine-package: name=catatonit repo=community
 ARG CATATONIT_VERSION=0.2.1-r0
 # alpine-package: name=coreutils repo=main
