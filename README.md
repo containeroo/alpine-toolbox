@@ -43,7 +43,7 @@ docker run --rm -it ghcr.io/containeroo/alpine-toolbox:root sh
 alpine linux (3.24.1) with following components:
 
 - bash (5.3.9-r1)
-- bind-tools (9.20.26-r0)
+- bind-tools (9.20.27-r0)
 - catatonit (0.2.1-r0)
 - coreutils (9.11-r0)
 - curl (8.22.0-r0)
