@@ -24,7 +24,7 @@ ARG OPENSSL_VERSION=3.5.8-r0
 # alpine-package: name=rsync repo=main
 ARG RSYNC_VERSION=3.5.0-r0
 # alpine-package: name=tzdata repo=main
-ARG TZDATA_VERSION=2026c-r0
+ARG TZDATA_VERSION=2026d-r0
 # alpine-package: name=xmlstarlet repo=community
 ARG XMLSTARLET_VERSION=1.6.1-r2
 
