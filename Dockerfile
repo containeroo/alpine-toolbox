@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.23
+# syntax=docker/dockerfile:1.27
 FROM alpine:3.24.1
 
 # alpine-package: name=bash repo=main
