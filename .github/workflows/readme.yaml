@@ -23,7 +23,7 @@ jobs:
         run: ./.github/scripts/sync-readme.sh
 
       - name: Push updated README.md
-        uses: EndBug/add-and-commit@v10
+        uses: EndBug/add-and-commit@v11
         with:
           message: "README: update version"
           default_author: github_actions
