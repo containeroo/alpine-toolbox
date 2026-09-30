@@ -20,7 +20,7 @@ ARG INETUTILS_VERSION=2.7-r0
 # alpine-package: name=jq repo=main
 ARG JQ_VERSION=1.8.2-r0
 # alpine-package: name=openssl repo=main
-ARG OPENSSL_VERSION=3.5.8-r0
+ARG OPENSSL_VERSION=3.5.9-r0
 # alpine-package: name=rsync repo=main
 ARG RSYNC_VERSION=3.5.0-r0
 # alpine-package: name=tzdata repo=main
