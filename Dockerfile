@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.23
-FROM alpine:3.24.1
+FROM alpine:3.24.2
 
 # alpine-package: name=bash repo=main
 ARG BASH_VERSION=5.3.9-r1
