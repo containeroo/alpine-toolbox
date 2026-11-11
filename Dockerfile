@@ -14,7 +14,7 @@ ARG CURL_VERSION=8.23.0-r0
 # alpine-package: name=gettext-envsubst repo=main
 ARG GETTEXT_ENVSUBST_VERSION=1.0-r0
 # alpine-package: name=git repo=main
-ARG GIT_VERSION=2.54.0-r0
+ARG GIT_VERSION=2.54.1-r0
 # alpine-package: name=inetutils-telnet repo=community
 ARG INETUTILS_VERSION=2.8-r0
 # alpine-package: name=jq repo=main
