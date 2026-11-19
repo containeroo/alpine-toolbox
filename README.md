@@ -51,7 +51,7 @@ alpine linux (3.24.1) with following components:
 - git (2.54.1-r0)
 - inetutils-telnet (2.8-r0)
 - jq (1.8.2-r0)
-- openssl (3.5.9-r0)
+- openssl (3.5.9-r1)
 - rsync (3.5.2-r1)
 - tzdata (2026f-r0)
 - xmlstarlet (1.6.1-r2)
